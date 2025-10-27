@@ -1,0 +1,61 @@
+{
+    "modules": [
+        {
+            "id": 1,
+            "title": "Vacina e Vacinação",
+            "lessons": [
+                {
+                    "id": 1,
+                    "title": "Uma breve história do desenvolvimento da vacina na história da humanidade",
+                    "description": "Uma breve história do desenvolvimento da vacina na história da humanidade",
+                    "steps": [
+                        { "id": 1, "title": "Início da Aula" },
+                        { "id": 2, "title": "Introdução" },
+                        { "id": 3, "title": "Os antecedentes da vacina" },
+                        { "id": 4, "title": "O desenvolvimento da vacina contra varíola" },
+                        { "id": 5, "title": "O desenvolvimento das vacinas" },
+                        { "id": 6, "title": "Exercícios" }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "title": "Características e importância das vacinas",
+                    "description": "Características e importância das vacinas",
+                    "steps": [
+                        { "id": 1, "title": "Início da Aula" },
+                        { "id": 2, "title": "Como as vacinas funcionam?" },
+                        { "id": 3, "title": "Os principais tipos de vacina" },
+                        { "id": 4, "title": "Estratégias de vacinação" },
+                        { "id": 5, "title": "Fases de desenvolvimento da vacina" },
+                        { "id": 6, "title": "Porque a vacinação é tão importante?" },
+                        { "id": 7, "title": "Exercícios" }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "title": "Vacinas como estratégias de saúde global",
+                    "description": "Vacinas como estratégias de saúde global",
+                    "steps": [
+                        { "id": 1, "title": "Início da Aula" },
+                        { "id": 2, "title": "A preocupação global com a vacinação" },
+                        { "id": 3, "title": "Vacinação como parte dos Objetivos do Desenvolvimento Sustentável (2030)" },
+                        { "id": 4, "title": "Exercícios" }
+                    ]
+                },
+                {
+                    "id": 4,
+                    "title": "Ética em Imunizações",
+                    "description": "Ética em Imunizações",
+                    "steps": [
+                        { "id": 1, "title": "Início da Aula" },
+                        { "id": 2, "title": "Ética e Bioética" },
+                        { "id": 3, "title": "Princípios da Teoria Principialista" },
+                        { "id": 4, "title": "Princípios para Políticas de Vacinação" },
+                        { "id": 5, "title": "Afinal, é obrigatório tomar vacina?" },
+                        { "id": 6, "title": "Exercícios" }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,2130 @@
+/* Reset e configurações básicas */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #F0F0DA; /* Creme/Creme */
+    color: #191915; /* Creme/600 */
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Layout principal */
+body {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "sidebar header"
+        "sidebar main"
+        "sidebar footer";
+    min-height: 100vh;
+}
+
+/* Header */
+.header {
+    grid-area: header;
+    position: relative;
+    background-image: url('assets/banner.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0px 2px 0px 0px rgba(55, 55, 49, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 64px 100px;
+    overflow: hidden;
+}
+
+.header-banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.module-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.module-number {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.2;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #211502;
+    margin: 0;
+}
+
+.module-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 44px;
+    line-height: 1.2;
+    color: #211502;
+    margin: 0;
+}
+
+/* Sidebar */
+.sidebar {
+    grid-area: sidebar;
+    background-color: #F0F0DA;
+    border-right: 2px solid #FBB934;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    padding: 32px 20px;
+    width: 260px;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: sticky;
+    top: 0;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.logo-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-image {
+    max-width: 140px;
+    height: auto;
+    object-fit: contain;
+}
+
+.logo-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #191915;
+    text-align: center;
+    margin: 0;
+}
+
+/* Navigation Menu */
+.nav-menu {
+    width: 100%;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-divider {
+    height: 1px;
+    background-color: #FBB934;
+    margin: 0.5px 0;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 0;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: rgba(251, 185, 52, 0.1);
+}
+
+.nav-icon {
+    width: 16px;
+    height: 16px;
+    color: #191915;
+    flex-shrink: 0;
+}
+
+.nav-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #191915;
+}
+
+/* Course Steps */
+.course-steps {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.stepper-lesson {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.stepper-lesson-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 1.6;
+    letter-spacing: 1.5%;
+    text-transform: uppercase;
+    color: #4A3D02;
+    margin: 0;
+}
+
+.stepper-lesson-description {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #4A3D02;
+    margin: 0;
+}
+
+.stepper-topics {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+}
+
+/* Topics */
+.topic-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    min-height: 24px;
+    position: relative;
+}
+
+.topic-item:hover {
+    background-color: rgba(251, 185, 52, 0.1);
+}
+
+.topic-icon {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    color: #FBB934;
+    flex-shrink: 0;
+    margin-top: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.topic-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 1.6;
+    letter-spacing: 0.5%;
+    color: #4A3D02;
+    flex: 1;
+}
+
+/* Estado completado - check com círculo preenchido */
+.topic-item.completed .topic-text {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Estado ativo - círculo preenchido */
+.topic-item.active .topic-text {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Estado pendente - círculo vazio (já é o padrão) */
+
+.topic-line {
+    display: none;
+}
+
+/* Linha vertical contínua atrás dos tópicos */
+/* Desenha segmentos por item para garantir continuidade da linha */
+.stepper-topics::before { display: none; }
+
+.topic-item::before {
+    content: "";
+    position: absolute;
+    left: 12px;
+    top: -12px;
+    bottom: -12px;
+    width: 2px;
+    background-color: #FBB934;
+    opacity: 0.3;
+    z-index: 1;
+}
+
+.topic-item:first-child::before { top: 12px; }
+.topic-item:last-child::before { bottom: 12px; }
+
+/* Additional Menu */
+.additional-menu {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* NiESP Logo */
+.niesp-logo {
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.niesp-image {
+    max-width: 180px;
+    height: auto;
+    max-height: 45px;
+    object-fit: contain;
+}
+
+/* Main Content */
+.main-content {
+    grid-area: main;
+    background-color: #FFFFFF;
+    padding: 0;
+    overflow-y: auto;
+}
+
+.content-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 80px 40px 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+/* Lesson Title */
+.lesson-title {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+}
+
+.lesson-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 20px;
+    background-color: #F0F0DA;
+    border-radius: 8px;
+    width: fit-content;
+}
+
+.lesson-badge-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.3;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #191915;
+}
+
+.lesson-title h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.3;
+    color: #191915;
+    margin: 0;
+}
+
+.title-line {
+    width: 120px;
+    height: 3px;
+    background-color: #191915;
+}
+
+/* Lesson Body */
+.lesson-body {
+    width: 100%;
+}
+
+.lesson-body p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.6em;
+    letter-spacing: 0.5%;
+    color: #191915;
+    margin: 0 0 48px 0;
+}
+
+.lesson-body p:last-child {
+    margin-bottom: 0;
+}
+
+.lesson-body .exercise-text {
+    margin: 0 !important;
+}
+
+/* Lesson Structure */
+.lesson-structure {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+}
+
+.lesson-structure p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #191915;
+    margin: 0;
+}
+
+.structure-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.structure-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.structure-number {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    color: #191915;
+    background-color: transparent;
+    border: 1.5px solid #191915;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.structure-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #191915;
+    padding-top: 4px;
+}
+
+/* Learning Objectives */
+.learning-objectives {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+}
+
+.learning-objectives p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #191915;
+    margin: 0;
+}
+
+.objectives-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.objective-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.objective-icon-target {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    color: #191915;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.objective-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #191915;
+}
+
+/* Footer */
+.footer {
+    grid-area: footer;
+    background-color: #FFFFFF;
+    padding: 60px 80px 0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    margin-bottom: 60px;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer-section:first-child {
+    flex-shrink: 0;
+}
+
+.footer-section:last-child {
+    flex: 1;
+}
+
+.footer-label {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.2;
+    color: #191915;
+    margin: 0;
+}
+
+.footer-logos-apoio {
+    display: flex;
+    align-items: center;
+}
+
+.footer-logo-img {
+    max-width: 150px;
+    height: auto;
+    object-fit: contain;
+}
+
+.footer-logos-realizacao {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px 24px;
+    align-items: center;
+    width: 100%;
+}
+
+.footer-logo-realizacao {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+}
+
+.logo-placeholder {
+    padding: 12px 20px;
+    background-color: rgba(251, 185, 52, 0.1);
+    border: 1px solid #FBB934;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    color: #211502;
+    text-align: center;
+}
+
+.footer-bottom {
+    height: 48px;
+    background-color: #373731;
+    margin: 0 -80px;
+}
+
+/* Scrollbar personalizado */
+.sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: rgba(251, 185, 52, 0.1);
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: #FBB934;
+    border-radius: 3px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: #F5A623;
+}
+
+/* Responsividade */
+@media (max-width: 1200px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "main"
+            "footer";
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .header {
+        padding: 48px 32px;
+    }
+
+    .content-container {
+        padding: 48px 32px 80px;
+    }
+
+    .footer {
+        padding: 48px 32px 0;
+    }
+
+    .footer-bottom {
+        margin: 0 -32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .module-number {
+        font-size: 18px;
+    }
+
+    .module-title {
+        font-size: 28px;
+    }
+
+    .lesson-title h1 {
+        font-size: 24px;
+    }
+
+    .content-container {
+        gap: 32px;
+        padding: 32px 24px 60px;
+    }
+
+    .lesson-body p,
+    .lesson-structure p,
+    .learning-objectives p,
+    .structure-text,
+    .objective-text {
+        font-size: 16px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .footer-logos-realizacao {
+        max-width: 100%;
+    }
+}
+
+/* ============================================
+   COMPONENTES ESPECÍFICOS - STEP 3
+   ============================================ */
+
+/* Definition Box - Boxes de definição (Imunidade, Imunização, etc) */
+.definition-box {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+    margin: 48px 0;
+}
+
+.definition-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    margin-bottom: 0;
+    padding: 8px;
+}
+
+.definition-item:last-child {
+    padding-bottom: 24px;
+}
+
+.definition-header {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 24px !important;
+    padding: 12px 24px 12px 0px !important;
+    width: 100% !important;
+    border-radius: 8px;
+    background-color: transparent;
+}
+
+.definition-icon {
+    width: 45px !important;
+    height: 45px !important;
+    min-width: 45px !important;
+    max-width: 45px !important;
+    color: #191915 !important;
+    flex-shrink: 0 !important;
+    flex-grow: 0 !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+}
+
+.definition-title {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 500 !important;
+    font-size: 21px !important;
+    line-height: 1.3333333333333333em !important;
+    color: #191915 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    flex: 1 !important;
+    display: inline !important;
+    width: auto !important;
+    vertical-align: middle !important;
+}
+
+.definition-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.6em;
+    letter-spacing: 0.5%;
+    color: #191915;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Image Container - Container para imagens */
+.image-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 48px 0;
+    width: 100%;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    border: 2px solid #211502;
+    border-radius: 8px;
+    box-shadow: 0px 4px 0px 0px rgba(55, 55, 49, 1);
+    object-fit: cover;
+}
+
+.image-caption {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 11px !important;
+    line-height: 1.219 !important;
+    letter-spacing: 1.5% !important;
+    color: #000000 !important;
+    text-align: left !important;
+    width: 100% !important;
+    margin: 0 !important;
+}
+
+/* Accessibility Box - Box de acessibilidade #PraTodosVerem */
+.accessibility-box {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    padding: 16px 12px;
+    background-color: #F8FAF7;
+    border: 0.5px dashed #FBB934;
+    border-radius: 8px;
+    margin: 48px 0;
+    width: 100%;
+}
+
+.accessibility-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 1.333;
+    color: #191915;
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.accessibility-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 12px;
+    line-height: 1.333;
+    color: #191915;
+    margin: 0;
+    flex: 1;
+}
+
+/* Info Box - Boxes de Saiba Mais e Importante */
+.info-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 2px solid #191915 !important;
+    border-bottom-width: 4px !important;
+    border-radius: 12px !important;
+    margin: 48px 0;
+    overflow: hidden;
+}
+
+/* Variante: Você Sabia? */
+.info-box.vc-sabia .info-box-content {
+    padding: 24px 24px 12px;
+}
+
+/* ============================================
+   COMPONENTES ESPECÍFICOS - STEP 5
+   ============================================ */
+.timeline-block {
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+    margin: 0 0 48px 0;
+}
+.timeline-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 24px;
+    background-color: #FEE9D4;
+    border-radius: 8px;
+}
+.timeline-icon {
+    width: 24px;
+    height: 24px;
+    color: #191915;
+}
+.timeline-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 1.333;
+    color: #191915;
+}
+.timeline-items {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.timeline-year {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 12px;
+}
+.timeline-year-icon { width: 24px; height: 24px; }
+.timeline-year-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 1.333;
+    color: #191915;
+}
+.timeline-entry {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 8px 8px 56px;
+}
+.timeline-arrow { width: 16px; height: 16px; color: #191915; }
+.timeline-entry .timeline-arrow { display: none; }
+.timeline-entry {
+    position: relative;
+}
+.timeline-entry::before {
+    content: "";
+    position: absolute;
+    left: 28px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 3v6c0 2.2 1.8 4 4 4h5" stroke="%23191915" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 11l3 3-3 3" stroke="%23191915" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.timeline-entry-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.6;
+    color: #191915;
+}
+.timeline-source {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 11px !important;
+    line-height: 1.219 !important;
+    letter-spacing: 1.5% !important;
+    color: #000000 !important;
+    margin: 0 !important;
+}
+.sintese-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 24px;
+    background-color: #F0F0DA;
+    border-radius: 8px;
+    margin: 12px 0;
+}
+.lesson-body p + .sintese-box { margin-top: -36px; }
+.sintese-icon { width: 24px; height: 24px; color: #191915; }
+.sintese-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 1.333;
+    color: #191915;
+}
+
+/* ============================================
+   COMPONENTES AULA 3 - STEP 4 (EXERCÍCIOS)
+   ============================================ */
+.exercise-container {
+    border: 2px solid #191915;
+    border-radius: 16px;
+    padding: 36px;
+    margin: 72px 0;
+}
+
+.exercise-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 18px;
+}
+
+.exercise-number-icon {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+}
+
+.exercise-question {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.219;
+    letter-spacing: 0.5%;
+    color: #191915;
+    margin: 0;
+}
+
+.exercise-options {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.exercise-option {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-left: 60px;
+    cursor: pointer;
+}
+
+.exercise-option input[type="radio"] {
+    display: none;
+}
+
+.radio-custom {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #191915;
+    border-radius: 50%;
+    background-color: #F8FAF7;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.exercise-option input[type="radio"]:checked + .radio-custom {
+    background-color: #FBB934;
+    border-color: #191915;
+}
+
+.exercise-option input[type="radio"]:checked + .radio-custom::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 5px;
+    height: 9px;
+    border: solid #FFFFFF;
+    border-width: 0 2px 2px 0;
+}
+
+.option-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 1.6;
+    letter-spacing: 0.5%;
+    color: #191915;
+}
+
+.exercise-option.correct {
+    opacity: 1;
+}
+
+.exercise-option.correct .radio-custom {
+    border-color: #191915;
+}
+
+.exercise-option.correct .option-text {
+    color: #000000;
+}
+
+.exercise-option.incorrect {
+    opacity: 0.5;
+}
+
+.exercise-option.incorrect .radio-custom {
+    border-color: #191915;
+}
+
+.exercise-option.incorrect .option-text {
+    color: #000000;
+    opacity: 0.5;
+}
+
+/* ============================================
+   COMPONENTES AULA 3 - STEP 3
+   ============================================ */
+.ods-goal {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.6;
+    letter-spacing: 0.5%;
+    color: #191915;
+    margin: 0;
+}
+
+.ods-indented {
+    padding-left: 48px;
+}
+
+.list-number-icon {
+    width: 16px;
+    height: 17px;
+    flex-shrink: 0;
+}
+
+.list-section .enumerated-list {
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.list-section .enumerated-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.list-section .list-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.6;
+    letter-spacing: 0.5%;
+    color: #191915;
+}
+
+.list-section .list-intro {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.6;
+    letter-spacing: 0.5%;
+    color: #191915;
+    margin: 0 0 32px 0;
+}
+
+.sintese-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 24px;
+    background-color: #F0F0DA;
+    border-radius: 8px;
+    margin: 48px 0 48px 0;
+}
+
+.sintese-icon {
+    width: 24px;
+    height: 24px;
+    color: #191915;
+    flex-shrink: 0;
+}
+
+.sintese-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 1.333;
+    color: #191915;
+    margin: 0;
+}
+
+.sintese-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.6;
+    letter-spacing: 0.5%;
+    color: #191915;
+}
+
+/* ============================================
+   COMPONENTES AULA 3 - STEP 2
+   ============================================ */
+.subtitle {
+    margin: 48px 0 24px 0;
+}
+
+.subtitle h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 1.333;
+    color: #191915;
+    margin: 0;
+}
+
+.reference-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #191915;
+    text-decoration: none;
+    margin-top: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.reference-link:hover {
+    text-decoration: underline;
+}
+
+.reference-link svg {
+    flex-shrink: 0;
+}
+
+.timeline-section {
+    margin: 48px 0;
+}
+
+.timeline-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 24px;
+    background-color: #FEE9D4;
+    border-radius: 8px;
+    margin-bottom: 21px;
+}
+
+.timeline-icon {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    color: #191915;
+    flex-shrink: 0;
+}
+
+.timeline-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 1.333;
+    color: #191915;
+    margin: 0;
+}
+
+.timeline-items {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.timeline-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 8px;
+}
+
+.timeline-entry-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 12px;
+    flex: 1;
+    margin-left: 36px;
+    margin-top: 8px;
+}
+
+.timeline-arrow-icon {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    color: #191915;
+    flex-shrink: 0;
+    margin-top: 0;
+}
+
+.timeline-year {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 140px;
+}
+
+.timeline-year-icon {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    color: #191915;
+    flex-shrink: 0;
+}
+
+.timeline-year-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 1.333;
+    color: #191915;
+}
+
+.timeline-entry-text,
+.timeline-multiple-entries .timeline-entry-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.6;
+    letter-spacing: 0.5%;
+    color: #191915;
+    margin: 0;
+    flex: 1;
+}
+
+.timeline-multiple-entries {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.timeline-multiple-entries .timeline-arrow-icon {
+    margin-top: 0;
+}
+
+.timeline-source {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 1.219;
+    letter-spacing: 1.5%;
+    color: #000000;
+    font-style: italic;
+    margin: 0;
+}
+
+/* ============================================
+   AULA 2 - STEP 1 (listas numeradas e objetivos)
+   ============================================ */
+.list-section { margin: 48px 0; }
+.list-section > p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.6em;
+    letter-spacing: 0.5%;
+    color: #191915;
+    margin: 0 0 21px 0;
+}
+.list-items { display: flex; flex-direction: column; gap: 21px; }
+.list-item { display: flex; align-items: center; gap: 12px; }
+.num-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    color: #000000;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 1;
+    box-shadow: 0 1px 0 0 rgba(0,0,0,1);
+}
+.target-icon { color: #000000; }
+.list-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.6em;
+    letter-spacing: 0.5%;
+    color: #191915;
+}
+.info-box.vc-sabia .info-box-image {
+    padding: 12px 24px 24px;
+}
+.info-box.vc-sabia .info-box-image img {
+    width: 100%;
+    height: auto;
+    border: 2px solid #211502;
+    border-radius: 8px;
+    box-shadow: 0px 4px 0px 0px rgba(55, 55, 49, 1);
+    object-fit: cover;
+}
+
+.info-box-header {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 24px;
+    padding: 24px;
+    background-color: #FBB934 !important;
+    border-bottom: 2px solid #191915 !important;
+    border-radius: 12px 12px 0px 0px !important;
+    width: 100%;
+}
+
+.info-box-icon {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    color: #191915 !important;
+    flex-shrink: 0;
+}
+
+.info-box-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.1666666666666667em;
+    color: #191915;
+    margin: 0;
+}
+
+/* Reforço de especificidade para corresponder exatamente ao Figma */
+.info-box .info-box-header { display: flex !important; }
+.info-box.saiba-mais .info-box-header,
+.info-box.importante .info-box-header {
+    background-color: #FBB934 !important;
+    border-bottom: 2px solid #191915 !important;
+}
+.info-box.saiba-mais .info-box-icon,
+.info-box.importante .info-box-icon {
+    color: #191915 !important;
+}
+.info-box .info-box-title { margin: 0 !important; }
+
+.info-box-content {
+    padding: 24px;
+    background-color: #FFFFFF !important;
+    color: #191915 !important;
+}
+
+.info-box-content p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.4285714285714286em;
+    letter-spacing: 0.25%;
+    color: #191915;
+    margin: 0 0 12px 0;
+}
+
+.info-box-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Variação para box Importante */
+.info-box.importante {
+    margin-bottom: 24px;
+}
+
+.info-box.importante .info-box-content {
+    padding: 24px 24px 12px;
+}
+
+/* ============================================
+   AULA 2 - STEP 4 (perguntas, alertas, figuras)
+   ============================================ */
+
+/* Question Box - Caixa de pergunta */
+.question-box {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 12px 24px 12px 0;
+    border-radius: 8px;
+    margin: 48px 0;
+    width: 100%;
+}
+
+.question-icon {
+    width: 45px;
+    height: 45px;
+    min-width: 45px;
+    color: #191915;
+    flex-shrink: 0;
+}
+
+.question-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 1.333;
+    color: #191915;
+    margin: 0;
+    flex: 1;
+}
+
+/* Alert Box - Box Importante */
+.alert-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 2px solid #191915;
+    border-bottom-width: 4px;
+    border-radius: 12px;
+    margin: 48px 0;
+    overflow: hidden;
+}
+
+.alert-header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 24px;
+    background-color: #FBB934;
+    border-bottom: 2px solid #191915;
+    border-radius: 12px 12px 0 0;
+}
+
+.alert-icon {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    color: #191915;
+    flex-shrink: 0;
+}
+
+.alert-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.167;
+    color: #191915;
+    margin: 0;
+}
+
+.alert-content {
+    padding: 24px 24px 12px;
+    background-color: #FFFFFF;
+}
+
+.alert-content p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.429;
+    letter-spacing: 0.25%;
+    color: #191915;
+    margin: 0 0 12px 0;
+}
+
+.alert-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Enumerated List - Lista enumerada com ícones */
+.enumerated-list {
+    margin: 48px 0;
+}
+
+.enumerated-list > p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.6;
+    letter-spacing: 0.5%;
+    color: #191915;
+    margin: 0 0 32px 0;
+}
+
+.enumerated-list .list-items {
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+}
+
+.enumerated-list .list-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.enumerated-list .item-icon {
+    width: 14px;
+    height: 14px;
+    min-width: 14px;
+    color: #000000;
+    flex-shrink: 0;
+    margin-top: 8px;
+}
+
+.enumerated-list .item-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.6;
+    letter-spacing: 0.5%;
+    color: #000000;
+    margin: 0;
+    flex: 1;
+}
+
+/* Figure Container - Container para figuras e imagens */
+.figure-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 48px 0;
+    width: 100%;
+}
+
+.figure-image {
+    width: 100%;
+    height: auto;
+    border: 2px solid #211502;
+    border-radius: 8px;
+    box-shadow: 0px 4px 0px 0px rgba(55, 55, 49, 1);
+    object-fit: cover;
+}
+
+.figure-caption {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 1.219;
+    letter-spacing: 1.5%;
+    color: #000000;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+}
+
+/* Responsividade para componentes do Step 3 */
+@media (max-width: 768px) {
+    .definition-header {
+        gap: 16px;
+        padding: 8px 16px 8px 0;
+    }
+
+    .definition-icon {
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+    }
+
+    .definition-title {
+        font-size: 18px;
+    }
+
+    .definition-text {
+        font-size: 16px;
+    }
+
+    .accessibility-box {
+        flex-direction: column;
+        gap: 8px;
+        padding: 12px;
+    }
+
+    .info-box-header {
+        gap: 16px;
+        padding: 16px;
+    }
+
+    .info-box-icon {
+        width: 24px;
+        height: 24px;
+        min-width: 24px;
+    }
+
+    .info-box-title {
+        font-size: 18px;
+    }
+
+    .info-box-content {
+        padding: 16px;
+    }
+
+    .info-box-content p {
+        font-size: 13px;
+    }
+
+    /* Step 4 responsiveness */
+    .question-box {
+        gap: 16px;
+        padding: 8px 16px 8px 0;
+    }
+
+    .question-icon {
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+    }
+
+    .question-title {
+        font-size: 18px;
+    }
+
+    .alert-header {
+        gap: 16px;
+        padding: 16px;
+    }
+
+    .alert-icon {
+        width: 24px;
+        height: 24px;
+        min-width: 24px;
+    }
+
+    .alert-title {
+        font-size: 18px;
+    }
+
+    .alert-content {
+        padding: 16px;
+    }
+
+    .alert-content p {
+        font-size: 13px;
+    }
+
+    .enumerated-list > p,
+    .enumerated-list .item-text {
+        font-size: 16px;
+    }
+}
+
+/* ============================================
+   COMPONENTES AULA 4 - STEP 2
+   ============================================ */
+
+/* Quote Box */
+.quote-box {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 24px 32px;
+    background-color: #F0F0DA;
+    border-radius: 16px;
+    margin: 48px 0;
+}
+
+.quote-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.6;
+    letter-spacing: 1.5%;
+    font-style: italic;
+    color: #191915;
+    margin: 0;
+}
+
+.quote-author {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.quote-dash {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.6;
+    letter-spacing: 1.5%;
+    font-style: italic;
+    color: #191915;
+}
+
+.quote-author-name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.4;
+    color: #191915;
+}
+
+/* Video Box */
+.info-box.video {
+    margin: 48px 0;
+}
+
+.video-placeholder {
+    width: 100%;
+    position: relative;
+}
+
+.video-thumbnail {
+    width: 100%;
+    height: 420px;
+    background-color: #373731;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.video-play-button {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.video-play-button:hover {
+    transform: scale(1.1);
+}
+
+.video-link {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 12px 24px 24px;
+    color: #191915;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.428;
+    letter-spacing: 0.25%;
+}
+
+.video-link:hover {
+    text-decoration: underline;
+}
+
+.video-link svg {
+    flex-shrink: 0;
+}
+
+/* Text Bold */
+.text-bold {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.4;
+    color: #191915;
+}
+
+/* Numbered Cards */
+.numbered-card {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #191915;
+    border-bottom-width: 4px;
+    border-radius: 16px;
+    overflow: hidden;
+    margin: 48px 0;
+}
+
+.numbered-card-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 48px 32px;
+    background-color: #F8FAF7;
+}
+
+.card-number {
+    flex-shrink: 0;
+    width: 14px;
+    height: 14px;
+}
+
+.card-number svg {
+    width: 14px;
+    height: 14px;
+}
+
+.numbered-card-content p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.6;
+    letter-spacing: 0.5%;
+    color: #191915;
+    margin: 0;
+    flex: 1;
+}
+
+.numbered-card-image {
+    width: 100%;
+    height: 568px;
+    overflow: hidden;
+}
+
+.numbered-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.numbered-card-caption {
+    display: flex;
+    align-items: stretch;
+    gap: 8px;
+    padding: 32px;
+    background-color: #F0F0DA;
+    border-radius: 0px 0px 16px 16px;
+}
+
+.numbered-card-caption p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.219;
+    letter-spacing: 0.4%;
+    color: #191915;
+    margin: 0;
+}
+
+/* Bioética Diagram */
+.bioetica-diagram {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+    margin: 48px 0;
+    padding: 32px 0;
+}
+
+.diagram-center {
+    display: flex;
+    justify-content: center;
+}
+
+.diagram-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 13px;
+    border: 3.28px solid #191915;
+    border-radius: 6.55px;
+    font-family: 'Montserrat', sans-serif;
+    color: #191915;
+}
+
+.center-box {
+    background-color: #FEE9D4;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 1.227;
+    min-width: 225px;
+}
+
+.principle-box {
+    background-color: #F8FAF7;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.227;
+    min-width: 120px;
+}
+
+.diagram-principles {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 48px 32px;
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+}
+
+.diagram-connector {
+    display: none;
+}
+
+.diagram-source {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 1.219;
+    letter-spacing: 1.5%;
+    color: #000000;
+    margin: 12px 0 0 0;
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    .quote-box {
+        padding: 16px 24px;
+    }
+
+    .quote-text {
+        font-size: 16px;
+    }
+
+    .quote-author-name {
+        font-size: 16px;
+    }
+
+    .video-thumbnail {
+        height: 280px;
+    }
+
+    .numbered-card-content {
+        padding: 24px;
+    }
+
+    .numbered-card-image {
+        height: 320px;
+    }
+
+    .diagram-principles {
+        gap: 32px 16px;
+    }
+
+    .principle-box {
+        font-size: 14px;
+        min-width: 100px;
+    }
+
+    .center-box {
+        font-size: 14px;
+        min-width: 180px;
+    }
+}
+
+/* ============================================
+   COMPONENTES AULA 4 - STEP 3
+   ============================================ */
+
+/* Topic Header */
+.topic-header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 12px 24px 12px 0px;
+    margin: 48px 0 32px 0;
+}
+
+.topic-icon {
+    width: 45px;
+    height: 45px;
+    flex-shrink: 0;
+    color: #000000;
+}
+
+.topic-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 21px;
+    line-height: 1.333;
+    color: #191915;
+    margin: 0;
+}
+
+/* Info Box Reflexao */
+.info-box.reflexao .info-box-header {
+    background-color: #FBB934;
+    border-bottom: 2px solid #191915;
+}
+
+.info-box.reflexao {
+    border: 2px solid #191915;
+    border-bottom-width: 4px;
+    border-radius: 12px;
+    margin: 48px 0;
+}
+
+/* Enumerated List - Topicos variant */
+.enumerated-list.topicos .list-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+@media (max-width: 768px) {
+    .topic-header {
+        padding: 12px 0;
+        gap: 16px;
+    }
+
+    .topic-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .topic-title {
+        font-size: 18px;
+    }
+}
+
+/* ============================================
+   COMPONENTES AULA 4 - STEP 4
+   ============================================ */
+
+/* Card Duplo */
+.card-duplo {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #191915;
+    border-bottom-width: 4px;
+    border-radius: 16px;
+    overflow: hidden;
+    margin: 48px 0;
+}
+
+.card-duplo-image {
+    display: flex;
+    flex-direction: column;
+    gap: -20px;
+    margin: 0;
+}
+
+.card-duplo-image img {
+    width: 100%;
+    height: 264px;
+    object-fit: cover;
+    border: 1px solid #191915;
+    border-radius: 8px 8px 0px 0px;
+}
+
+.card-duplo-caption {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 1.219;
+    letter-spacing: 1.5%;
+    color: #191915;
+    padding: 0 12px 12px;
+}
+
+.card-duplo-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 12px;
+    background-color: #F0F0DA;
+    border: 0px 1px 0px 1px solid #191915;
+}
+
+.card-duplo-text.first {
+    border-top: 0px;
+    border-left: 1px solid #191915;
+    border-right: 1px solid #191915;
+    border-bottom: 0px;
+}
+
+.card-duplo-text.second {
+    border-top: 1px solid #191915;
+    border-left: 1px solid #191915;
+    border-right: 1px solid #191915;
+    border-bottom: 4px solid #191915;
+    border-radius: 0px 0px 16px 16px;
+    padding-bottom: 32px;
+}
+
+.card-duplo-bold {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 1.333;
+    color: #191915;
+    margin: 0;
+}
+
+.card-duplo-regular {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.219;
+    letter-spacing: 0.4%;
+    color: #191915;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .card-duplo-image img {
+        height: 180px;
+    }
+
+    .card-duplo-text {
+        padding: 8px;
+    }
+
+    .card-duplo-text.second {
+        padding-bottom: 24px;
+    }
+}
