@@ -1151,3 +1151,206 @@
 .references-content p:last-child {
     margin-bottom: 0;
 }
+
+.references-content a {
+    color: #191915;
+    text-decoration: underline;
+}
+
+.references-content a:hover {
+    color: #000000;
+}
+
+.exercise-content {
+    padding-left: 30px;
+    margin-bottom: 24px;
+}
+
+.exercise-content p {
+    font-family: var(--font-family);
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #191915;
+    margin: 0 0 12px 0;
+}
+
+.exercise-content p:last-child {
+    margin-bottom: 0;
+}
+
+.useful-links-box {
+    background-color: transparent;
+    border: 2px solid #191915;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 32px;
+}
+
+.useful-links-header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 24px;
+    background-color: #FBB934;
+    border-bottom: 2px solid #191915;
+}
+
+.useful-links-title {
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.167;
+    color: #191915;
+    margin: 0;
+}
+
+.useful-links-content {
+    padding: 24px;
+    background-color: #FFFFFF;
+}
+
+.useful-links-content p {
+    font-family: var(--font-family);
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.429;
+    letter-spacing: 0.25%;
+    color: #191915;
+    margin: 0 0 16px 0;
+}
+
+.useful-links-content p:last-child {
+    margin-bottom: 0;
+}
+
+.useful-links-content a {
+    color: #191915;
+    text-decoration: underline;
+    word-break: break-all;
+}
+
+.useful-links-content a:hover {
+    color: #000000;
+}
+
+/* ============================================
+   MÓDULO 2 - CORES AZUIS (#2E96D4)
+   ============================================ */
+body.module-2 .component-box.info {
+    border-left-color: #2E96D4;
+}
+
+body.module-2 .component-box.video .component-header {
+    background-color: #2E96D4 !important;
+}
+
+body.module-2 .component-icon {
+    color: #2E96D4;
+}
+
+body.module-2 .video-link {
+    color: #2E96D4 !important;
+}
+
+body.module-2 .video-link svg {
+    color: #2E96D4;
+}
+
+body.module-2 .accessibility-box {
+    border-color: #2E96D4;
+}
+
+body.module-2 .exercise-option input[type="radio"]:checked ~ .radio-custom {
+    background-color: #2E96D4;
+    border-color: #2E96D4;
+}
+
+body.module-2 .tab-button.active {
+    background-color: #2E96D4;
+}
+
+body.module-2 .vaccine-tab.active {
+    background-color: #2E96D4;
+}
+
+body.module-2 .references-header {
+    background-color: #2E96D4;
+}
+
+body.module-2 .btn-navigation {
+    background-color: #2E96D4;
+}
+
+body.module-2 .btn-navigation:hover {
+    background-color: #2580b8;
+}
+
+body.module-2 .exercise-option input[type="radio"]:checked ~ .radio-custom::before {
+    display: none;
+}
+
+body.module-2 .useful-links-header {
+    background-color: #2E96D4;
+}
+
+/* ============================================
+   MÓDULO 3 - CORES VERMELHAS (#EA5548)
+   ============================================ */
+body.module-3 .component-box.info {
+    border-left-color: #EA5548;
+}
+
+body.module-3 .component-box.video .component-header {
+    background-color: #EA5548 !important;
+}
+
+body.module-3 .component-icon {
+    color: #EA5548;
+}
+
+body.module-3 .video-link {
+    color: #EA5548 !important;
+}
+
+body.module-3 .video-link svg {
+    color: #EA5548;
+}
+
+body.module-3 .accessibility-box {
+    border-color: #EA5548;
+}
+
+body.module-3 .exercise-option input[type="radio"]:checked ~ .radio-custom {
+    background-color: #EA5548;
+    border-color: #EA5548;
+}
+
+body.module-3 .tab-button.active {
+    background-color: #EA5548;
+}
+
+body.module-3 .vaccine-tab.active {
+    background-color: #EA5548;
+}
+
+body.module-3 .references-header {
+    background-color: #EA5548;
+}
+
+body.module-3 .useful-links-header {
+    background-color: #EA5548;
+}
+
+body.module-3 .btn-navigation {
+    background-color: #EA5548;
+}
+
+body.module-3 .btn-navigation:hover {
+    background-color: #d94940;
+}
+
+body.module-3 .exercise-option input[type="radio"]:checked ~ .radio-custom::before {
+    display: block;
+}
+

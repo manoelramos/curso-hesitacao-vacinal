@@ -35,8 +35,27 @@
     function renderHeader(module) {
         const moduleNumberEl = document.querySelector('.module-number');
         const moduleTitleEl = document.querySelector('.module-title');
+        const headerEl = document.querySelector('.header');
+        const bodyEl = document.body;
         if (moduleNumberEl) moduleNumberEl.textContent = `MÓDULO ${module.id}`;
         if (moduleTitleEl) moduleTitleEl.textContent = module.title || '';
+        if (headerEl) {
+            if (module.id === 2) {
+                headerEl.style.backgroundImage = "url('assets/banner-2.svg')";
+            } else if (module.id === 3) {
+                headerEl.style.backgroundImage = "url('assets/banner-3.png')";
+            } else {
+                headerEl.style.backgroundImage = "url('assets/banner.svg')";
+            }
+        }
+        if (bodyEl) {
+            bodyEl.classList.remove('module-2', 'module-3');
+            if (module.id === 2) {
+                bodyEl.classList.add('module-2');
+            } else if (module.id === 3) {
+                bodyEl.classList.add('module-3');
+            }
+        }
     }
 
     function renderStepper(lesson, currentStepId) {
@@ -81,7 +100,7 @@
         });
     }
 
-    function renderPrevNext(lesson, currentStepId, module) {
+    function renderPrevNext(lesson, currentStepId, module, structure) {
         const contentEl = document.getElementById('content');
         if (!contentEl) return;
         const containerEl = contentEl.querySelector('.content-container') || contentEl;
@@ -107,6 +126,16 @@
                 const nextLesson = module.lessons[currentLessonIndex + 1];
                 nextHref = `#/modulo/${moduleId}/aula/${nextLesson.id}/step/1`;
                 nextButtonText = 'Próxima Aula';
+            } else {
+                // Se for a última aula do módulo, verifica se há próximo módulo
+                const currentModuleIndex = (structure.modules || []).findIndex(m => m.id === moduleId);
+                if (currentModuleIndex !== -1 && currentModuleIndex < (structure.modules || []).length - 1) {
+                    const nextModule = structure.modules[currentModuleIndex + 1];
+                    if (nextModule.lessons && nextModule.lessons.length > 0) {
+                        nextHref = `#/modulo/${nextModule.id}/aula/${nextModule.lessons[0].id}/step/1`;
+                        nextButtonText = 'Próximo Módulo';
+                    }
+                }
             }
         } else {
             nextHref = `#/modulo/${moduleId}/aula/${lessonId}/step/${next}`;
@@ -239,7 +268,7 @@
             const content = document.getElementById('content');
             content.innerHTML = html;
             renderStepper(lesson, stepId);
-            renderPrevNext(lesson, stepId, module);
+            renderPrevNext(lesson, stepId, module, structure);
 
             // Inicializa as tabs após o conteúdo ser carregado
             setTimeout(() => {

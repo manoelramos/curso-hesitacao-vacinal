@@ -56,6 +56,91 @@
                     ]
                 }
             ]
+        },
+        {
+            "id": 2,
+            "title": "Vacinação no Brasil",
+            "lessons": [
+                {
+                    "id": 1,
+                    "title": "História da Vacinação no Brasil",
+                    "description": "História da Vacinação no Brasil",
+                    "steps": [
+                        { "id": 1, "title": "Início da Aula" },
+                        { "id": 2, "title": "Introdução" },
+                        { "id": 3, "title": "Os antecedentes da vacina" },
+                        { "id": 4, "title": "O desenvolvimento da vacina contra varíola" },
+                        { "id": 5, "title": "Exercícios" }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "title": "Política de Vacinação no Brasil (Política Nacional de Vacinação)",
+                    "description": "Política de Vacinação no Brasil (Política Nacional de Vacinação)",
+                    "steps": [
+                        { "id": 1, "title": "Início da Aula" },
+                        { "id": 2, "title": "Criação do Programa Nacional de Vacinação (PNI)" },
+                        { "id": 3, "title": "Principais características do Programa" },
+                        { "id": 4, "title": "Conjuntura atual e desafios" },
+                        { "id": 5, "title": "Calendários e Estratégias de Vacinação" },
+                        { "id": 6, "title": "Exercícios" }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "title": "Cobertura Vacinal no Brasil",
+                    "description": "Cobertura Vacinal no Brasil",
+                    "steps": [
+                        { "id": 1, "title": "Início da Aula" },
+                        { "id": 2, "title": "Coberturas Vacinais no Brasil" },
+                        { "id": 3, "title": "Homogeneidade da Cobertura Vacinal" },
+                        { "id": 4, "title": "Exercícios" }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Hesitação Vacinal",
+            "lessons": [
+                {
+                    "id": 1,
+                    "title": "Conceituando hesitação: como e por que as pessoas não se vacinam?",
+                    "description": "Conceituando hesitação: como e por que as pessoas não se vacinam?",
+                    "steps": [
+                        { "id": 1, "title": "Início da Aula" },
+                        { "id": 2, "title": "Introdução" },
+                        { "id": 3, "title": "Por que as pessoas hesitam?" },
+                        { "id": 4, "title": "Mas o que é Hesitação Vacinal?" },
+                        { "id": 5, "title": "Um primeiro modelo: 3Cs" },
+                        { "id": 6, "title": "Exercícios" }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "title": "Determinantes da Hesitação Vacinal",
+                    "description": "Determinantes da Hesitação Vacinal",
+                    "steps": [
+                        { "id": 1, "title": "Início da Aula" },
+                        { "id": 2, "title": "Modelo dos 3 C's" },
+                        { "id": 3, "title": "Determinantes Contextuais" },
+                        { "id": 4, "title": "Determinantes Individuais e de Grupo" },
+                        { "id": 5, "title": "Exercícios" }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "title": "Movimento Antivacina",
+                    "description": "Movimento Antivacina",
+                    "steps": [
+                        { "id": 1, "title": "Início da Aula" },
+                        { "id": 2, "title": "Histórico do movimento antivacina" },
+                        { "id": 3, "title": "Movimento antivacina no mundo e no Brasil" },
+                        { "id": 4, "title": "Movimento antivacina e as plataformas digitais" },
+                        { "id": 5, "title": "Exercícios" }
+                    ]
+                }
+            ]
         }
     ]
 }
