@@ -151,24 +151,24 @@
                     "title": "Fortalecimento de Estratégias e ações da APS",
                     "description": "Fortalecimento de Estratégias e ações da APS",
                     "steps": [
-                        { "id": 1, "title": "Início da Aula" },
-                        { "id": 2, "title": "Introdução" },
-                        { "id": 3, "title": "Os antecedentes da vacina" },
-                        { "id": 4, "title": "O desenvolvimento da vacina contra varíola" },
+                        { "id": 1, "title": "Fortalecimento de Estratégias e ações da APS" },
+                        { "id": 2, "title": "Atenção Primária à Saúde (APS) no SUS" },
+                        { "id": 3, "title": "APS e o Programa Nacional de Imunização (PNI)" },
+                        { "id": 4, "title": "Estratégias/ações para lidar com a hesitação vacinal no contexto da APS" },
                         { "id": 5, "title": "Exercícios" }
                     ]
                 },
                 {
                     "id": 2,
-                    "title": "Abordagem ao Paciente Hesitante",
-                    "description": "Abordagem ao Paciente Hesitante",
+                    "title": "Lidando com a Infodemia, Desinformação e Notícias Falsas (Fake News)",
+                    "description": "Lidando com a Infodemia, Desinformação e Notícias Falsas (Fake News)",
                     "steps": [
-                        { "id": 1, "title": "Início da Aula" },
-                        { "id": 2, "title": "Escuta ativa e empatia" },
-                        { "id": 3, "title": "Técnicas de diálogo e aconselhamento" },
-                        { "id": 4, "title": "Lidando com mitos e fake news" },
-                        { "id": 5, "title": "Orientações de abordagem da hesitação vacinal" },
-                        { "id": 6, "title": "Coberturas Vacinais no Brasil" },
+                        { "id": 1, "title": "Lidando com a Infodemia, Desinformação e Notícias Falsas (Fake News)" },
+                        { "id": 2, "title": "Plataformas digitais e a distribuição da desinformação e notícias falsas" },
+                        { "id": 3, "title": "Motivos para a Divulgação de Desinformação" },
+                        { "id": 4, "title": "Desinformação, danos e táticas para espalhar notícias falsas (Fake News)" },
+                        { "id": 5, "title": "Estratégias para reconhecimento de notícia falsa" },
+                        { "id": 6, "title": "Formas de disputar o ecossistema das redes sociais" },
                         { "id": 7, "title": "Exercícios" }
                     ]
                 },
