@@ -983,8 +983,8 @@ body {
 }
 
 .exercise-number-icon {
-    width: 14px;
-    height: 14px;
+    width: 32px;
+    height: 32px;
     flex-shrink: 0;
 }
 
@@ -996,6 +996,7 @@ body {
     letter-spacing: 0.5%;
     color: #191915;
     margin: 0;
+    flex: 1;
 }
 
 .exercise-options {
@@ -1113,6 +1114,13 @@ body {
     display: flex;
     align-items: flex-start;
     gap: 12px;
+}
+
+.list-section .enumerated-list li .list-number-icon {
+    width: 14px;
+    height: 14px;
+    margin-top: 8px;
+    flex-shrink: 0;
 }
 
 .list-section .list-text {
@@ -1781,6 +1789,153 @@ body {
     color: #191915;
 }
 
+.quote-box p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.6;
+    letter-spacing: 0.5%;
+    color: #191915;
+    margin: 0 0 12px 0;
+}
+
+.quote-box p:last-child {
+    margin-bottom: 0;
+}
+
+/* Reflection Box - Para Refletir */
+.reflection-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 2px solid #191915;
+    border-bottom-width: 4px;
+    border-radius: 12px;
+    margin: 48px 0;
+    overflow: hidden;
+}
+
+.reflection-header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 24px;
+    background-color: #109D82;
+    border-bottom: 2px solid #191915;
+    border-radius: 12px 12px 0 0;
+}
+
+.reflection-icon {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    color: #191915;
+    flex-shrink: 0;
+}
+
+.reflection-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.167;
+    color: #191915;
+    margin: 0;
+}
+
+.reflection-content {
+    padding: 24px 24px 12px;
+    background-color: #FFFFFF;
+}
+
+.reflection-content p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.429;
+    letter-spacing: 0.25%;
+    color: #191915;
+    margin: 0 0 12px 0;
+}
+
+.reflection-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Synthesis Section - Síntese */
+.synthesis-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 24px;
+    background-color: #F0F0DA;
+    border-radius: 8px;
+    margin: 32px 0;
+}
+
+.synthesis-icon {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    color: #191915;
+    flex-shrink: 0;
+}
+
+.synthesis-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 1.333;
+    color: #191915;
+    margin: 0;
+}
+
+/* Enumerated Section - Casos numerados */
+.enumerated-section {
+    margin: 48px 0;
+}
+
+.enumerated-section > p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.6;
+    letter-spacing: 0.5%;
+    color: #191915;
+    margin: 0 0 32px 0;
+}
+
+.enumerated-list {
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+}
+
+.enumerated-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.number-icon {
+    width: 14px;
+    height: 14px;
+    min-width: 14px;
+    flex-shrink: 0;
+    margin-top: 8px;
+    color: #000000;
+}
+
+.enumerated-item p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.6;
+    letter-spacing: 0.5%;
+    color: #000000;
+    margin: 0;
+    flex: 1;
+}
+
 /* Video Box */
 .info-box.video {
     margin: 48px 0;
@@ -2017,6 +2172,46 @@ body {
     .center-box {
         font-size: 14px;
         min-width: 180px;
+    }
+
+    .reflection-header {
+        gap: 16px;
+        padding: 16px;
+    }
+
+    .reflection-icon {
+        width: 24px;
+        height: 24px;
+        min-width: 24px;
+    }
+
+    .reflection-title {
+        font-size: 18px;
+    }
+
+    .reflection-content {
+        padding: 16px;
+    }
+
+    .reflection-content p {
+        font-size: 13px;
+    }
+
+    .synthesis-section {
+        padding: 12px 16px;
+    }
+
+    .synthesis-title {
+        font-size: 18px;
+    }
+
+    .enumerated-section > p,
+    .enumerated-item p {
+        font-size: 16px;
+    }
+
+    .quote-box p {
+        font-size: 16px;
     }
 }
 
@@ -2394,6 +2589,37 @@ body.module-3 .info-box.video-box .info-box-header {
     text-decoration: none;
 }
 
+.arrow-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin: 32px 0;
+}
+
+.arrow-list-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.arrow-list-item .arrow-icon {
+    min-width: 24px;
+    width: 24px;
+    height: 24px;
+    color: #191915;
+    flex-shrink: 0;
+    margin-top: 4px;
+}
+
+.arrow-list-item p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #191915;
+    margin: 0;
+}
+
 .principle-item {
     display: flex;
     align-items: center;
@@ -2577,13 +2803,6 @@ body.module-2 .info-box.referencias .info-box-header {
     padding: 32px;
     border: 2px solid #191915;
     border-radius: 8px;
-}
-
-.exercise-question {
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    margin-bottom: 24px;
 }
 
 .exercise-number {
@@ -2776,4 +2995,77 @@ body.module-2 .info-box.referencias .info-box-header {
 
 .table-source a:hover {
     text-decoration: none;
+}
+
+/* ============================================
+   MÓDULO 4 - CORES VERDE-AZULADAS (#109D82)
+   ============================================ */
+body.module-4 .sidebar {
+    border-right-color: #109D82;
+}
+
+body.module-4 .nav-link:hover {
+    background-color: rgba(16, 157, 130, 0.1);
+}
+
+body.module-4 .topic-icon {
+    color: #109D82;
+}
+
+body.module-4 .topic-item.completed .topic-icon circle {
+    fill: #109D82;
+}
+
+body.module-4 .topic-item.active .topic-icon circle {
+    fill: #109D82;
+}
+
+body.module-4 .topic-item .topic-icon circle {
+    stroke: #109D82;
+}
+
+body.module-4 .sidebar::-webkit-scrollbar-thumb {
+    background: #109D82;
+}
+
+body.module-4 .sidebar::-webkit-scrollbar-thumb:hover {
+    background: #0e8771;
+}
+
+body.module-4 .accessibility-box {
+    border-color: #109D82;
+}
+
+body.module-4 .exercise-option input[type="radio"]:checked + .radio-custom {
+    background-color: #109D82;
+}
+
+body.module-4 .info-box-header {
+    background-color: #109D82 !important;
+}
+
+body.module-4 .info-box.saiba-mais .info-box-header,
+body.module-4 .info-box.importante .info-box-header,
+body.module-4 .info-box.reflexao .info-box-header,
+body.module-4 .info-box.destaque .info-box-header,
+body.module-4 .info-box.atencao .info-box-header,
+body.module-4 .info-box.referencias .info-box-header,
+body.module-4 .info-box.vc-sabia .info-box-header {
+    background-color: #109D82 !important;
+}
+
+body.module-4 .alert-header {
+    background-color: #109D82;
+}
+
+body.module-4 .topic-item::before {
+    background-color: #109D82;
+}
+
+body.module-4 .info-box.voce-sabia .info-box-header {
+    background-color: #109D82 !important;
+}
+
+body.module-4 .info-box.video-box .info-box-header {
+    background-color: #109D82 !important;
 }

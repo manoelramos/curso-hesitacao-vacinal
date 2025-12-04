@@ -141,6 +141,54 @@
                     ]
                 }
             ]
+        },
+        {
+            "id": 4,
+            "title": "Estratégias para lidar com a Hesitação Vacinal",
+            "lessons": [
+                {
+                    "id": 1,
+                    "title": "Fortalecimento de Estratégias e ações da APS",
+                    "description": "Fortalecimento de Estratégias e ações da APS",
+                    "steps": [
+                        { "id": 1, "title": "Início da Aula" },
+                        { "id": 2, "title": "Introdução" },
+                        { "id": 3, "title": "Os antecedentes da vacina" },
+                        { "id": 4, "title": "O desenvolvimento da vacina contra varíola" },
+                        { "id": 5, "title": "Exercícios" }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "title": "Abordagem ao Paciente Hesitante",
+                    "description": "Abordagem ao Paciente Hesitante",
+                    "steps": [
+                        { "id": 1, "title": "Início da Aula" },
+                        { "id": 2, "title": "Escuta ativa e empatia" },
+                        { "id": 3, "title": "Técnicas de diálogo e aconselhamento" },
+                        { "id": 4, "title": "Lidando com mitos e fake news" },
+                        { "id": 5, "title": "Orientações de abordagem da hesitação vacinal" },
+                        { "id": 6, "title": "Coberturas Vacinais no Brasil" },
+                        { "id": 7, "title": "Exercícios" }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "title": "Iniciativa para Altas Coberturas Vacinais",
+                    "description": "Iniciativa para Altas Coberturas Vacinais",
+                    "steps": [
+                        { "id": 1, "title": "Iniciativa para Altas Coberturas Vacinais" },
+                        { "id": 2, "title": "As estratégias de vacinação que nos deram experiências" },
+                        { "id": 3, "title": "O caso da varíola" },
+                        { "id": 4, "title": "Meningite: da falta de informação à alta cobertura vacinal" },
+                        { "id": 5, "title": "A Poliomielite, o DIA D e a criação do Zé Gotinha" },
+                        { "id": 6, "title": "Todos pela Vacina" },
+                        { "id": 7, "title": "O Movimento Nacional pela Vacinação" },
+                        { "id": 8, "title": "Novas ideias para novas realidades" },
+                        { "id": 9, "title": "Exercícios" }
+                    ]
+                }
+            ]
         }
     ]
 }

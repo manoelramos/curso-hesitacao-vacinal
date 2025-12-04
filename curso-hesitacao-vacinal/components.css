@@ -1354,3 +1354,63 @@ body.module-3 .exercise-option input[type="radio"]:checked ~ .radio-custom::befo
     display: block;
 }
 
+/* ============================================
+   MÓDULO 4 - CORES VERDE-AZULADAS (#109D82)
+   ============================================ */
+body.module-4 .component-box.info {
+    border-left-color: #109D82;
+}
+
+body.module-4 .component-box.video .component-header {
+    background-color: #109D82 !important;
+}
+
+body.module-4 .component-icon {
+    color: #109D82;
+}
+
+body.module-4 .video-link {
+    color: #109D82 !important;
+}
+
+body.module-4 .video-link svg {
+    color: #109D82;
+}
+
+body.module-4 .accessibility-box {
+    border-color: #109D82;
+}
+
+body.module-4 .exercise-option input[type="radio"]:checked ~ .radio-custom {
+    background-color: #109D82;
+    border-color: #109D82;
+}
+
+body.module-4 .tab-button.active {
+    background-color: #109D82;
+}
+
+body.module-4 .vaccine-tab.active {
+    background-color: #109D82;
+}
+
+body.module-4 .references-header {
+    background-color: #109D82;
+}
+
+body.module-4 .useful-links-header {
+    background-color: #109D82;
+}
+
+body.module-4 .btn-navigation {
+    background-color: #109D82;
+}
+
+body.module-4 .btn-navigation:hover {
+    background-color: #0e8771;
+}
+
+body.module-4 .exercise-option input[type="radio"]:checked ~ .radio-custom::before {
+    display: block;
+}
+

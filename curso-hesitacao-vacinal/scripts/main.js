@@ -44,16 +44,20 @@
                 headerEl.style.backgroundImage = "url('assets/banner-2.svg')";
             } else if (module.id === 3) {
                 headerEl.style.backgroundImage = "url('assets/banner-3.png')";
+            } else if (module.id === 4) {
+                headerEl.style.backgroundImage = "url('assets/banner-4.png')";
             } else {
                 headerEl.style.backgroundImage = "url('assets/banner.svg')";
             }
         }
         if (bodyEl) {
-            bodyEl.classList.remove('module-2', 'module-3');
+            bodyEl.classList.remove('module-2', 'module-3', 'module-4');
             if (module.id === 2) {
                 bodyEl.classList.add('module-2');
             } else if (module.id === 3) {
                 bodyEl.classList.add('module-3');
+            } else if (module.id === 4) {
+                bodyEl.classList.add('module-4');
             }
         }
     }
