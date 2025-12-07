@@ -334,12 +334,78 @@
         });
     }
 
+    function initializeCheckButtons() {
+        const checkButtons = document.querySelectorAll('.check-answer-button');
+
+        checkButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const exerciseNumber = this.getAttribute('data-exercise');
+                const container = this.closest('.exercise-container');
+
+                if (!container) return;
+
+                const correctOption = container.getAttribute('data-correct');
+                const selectedInput = container.querySelector('input[type="radio"]:checked');
+                const feedbackDiv = container.querySelector(`.exercise-feedback[data-exercise="${exerciseNumber}"]`);
+
+                if (!selectedInput) {
+                    // Se nenhuma opção foi selecionada
+                    if (feedbackDiv) {
+                        feedbackDiv.className = 'exercise-feedback incorrect';
+                        feedbackDiv.textContent = 'Por favor, selecione uma resposta antes de verificar.';
+                    }
+                    return;
+                }
+
+                const selectedOption = selectedInput.parentElement.getAttribute('data-option');
+                const options = container.querySelectorAll('.exercise-option');
+
+                // Remove classes anteriores
+                options.forEach(opt => {
+                    opt.classList.remove('correct', 'incorrect');
+                });
+
+                // Verifica se está correto
+                if (selectedOption === correctOption) {
+                    selectedInput.parentElement.classList.add('correct');
+                    if (feedbackDiv) {
+                        feedbackDiv.className = 'exercise-feedback correct';
+                        feedbackDiv.textContent = '✓ Resposta correta! Parabéns!';
+                    }
+                } else {
+                    selectedInput.parentElement.classList.add('incorrect');
+                    // Mostra a resposta correta
+                    options.forEach(opt => {
+                        if (opt.getAttribute('data-option') === correctOption) {
+                            opt.classList.add('correct');
+                        }
+                    });
+                    if (feedbackDiv) {
+                        feedbackDiv.className = 'exercise-feedback incorrect';
+                        feedbackDiv.textContent = '✗ Resposta incorreta. A resposta correta está destacada em verde.';
+                    }
+                }
+
+                // Desabilita o botão após checagem
+                this.disabled = true;
+            });
+        });
+    }
+
     // Initialize exercises when content is loaded
     document.addEventListener('DOMContentLoaded', function() {
         setTimeout(() => {
             initializeTabs();
             initializeVaccineTabs();
             initializeExercises();
+            initializeCheckButtons();
+        }, 100);
+    });
+
+    // Re-initialize after content changes (hash navigation)
+    window.addEventListener('hashchange', function() {
+        setTimeout(() => {
+            initializeCheckButtons();
         }, 100);
     });
 })();
