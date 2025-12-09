@@ -130,7 +130,7 @@
 .topic-text {
     font-family: var(--font-family);
     font-weight: 300;
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-base);
     line-height: 1.6;
     letter-spacing: 0.5%;
     color: var(--stepper-text);
@@ -139,6 +139,11 @@
 
 .topic-item.active .topic-text {
     font-weight: 700;
+    font-size: var(--font-size-base);
+}
+
+.topic-item.completed .topic-text {
+    font-weight: 300;
     font-size: var(--font-size-base);
 }
 
@@ -1413,4 +1418,3 @@ body.module-4 .btn-navigation:hover {
 body.module-4 .exercise-option input[type="radio"]:checked ~ .radio-custom::before {
     display: block;
 }
-
