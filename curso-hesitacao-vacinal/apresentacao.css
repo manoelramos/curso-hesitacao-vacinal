@@ -570,8 +570,16 @@
     }
 
     .text-content p {
-        font-size: 16px;
+        font-size: 20px;
         text-align: left;
+    }
+
+    .text-content .enumerated-list .item-text {
+        font-size: 20px;
+    }
+
+    .text-content .subtitle p {
+        font-size: 20px;
     }
 
     .modules-grid {
@@ -649,7 +657,15 @@
     }
 
     .text-content p {
-        font-size: 15px;
+        font-size: 20px;
+    }
+
+    .text-content .enumerated-list .item-text {
+        font-size: 20px;
+    }
+
+    .text-content .subtitle p {
+        font-size: 20px;
     }
 
     .module-card {
