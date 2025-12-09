@@ -3,8 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <base href="./">
     <title>Curso Hesitação Vacinal - Módulo 1</title>
+    <script>
+        // Configura o caminho base dinamicamente
+        (function() {
+            const pathname = window.location.pathname;
+            const basePath = pathname.substring(0, pathname.lastIndexOf('/') + 1);
+            const base = document.createElement('base');
+            base.href = basePath;
+            document.head.insertBefore(base, document.head.firstChild);
+        })();
+    </script>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="components.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800&display=swap" rel="stylesheet">

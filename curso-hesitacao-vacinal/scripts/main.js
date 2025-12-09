@@ -250,6 +250,33 @@
         });
     }
 
+    function getBasePath() {
+        // Detecta o caminho base do repositório
+        const pathname = window.location.pathname;
+        // Remove o nome do arquivo (index.html) e mantém o caminho do diretório
+        const basePath = pathname.substring(0, pathname.lastIndexOf('/') + 1);
+        return basePath;
+    }
+
+    function fixImagePaths(html) {
+        const basePath = getBasePath();
+        // Corrige caminhos relativos que começam com assets/ ou ../../../../assets/
+        html = html.replace(
+            /src=["'](?:\.\.\/)+assets\/([^"']+)["']/g,
+            `src="${basePath}assets/$1"`
+        );
+        html = html.replace(
+            /src=["']assets\/([^"']+)["']/g,
+            `src="${basePath}assets/$1"`
+        );
+        // Corrige caminhos que começam com modules/
+        html = html.replace(
+            /src=["']modules\/([^"']+)["']/g,
+            `src="${basePath}modules/$1"`
+        );
+        return html;
+    }
+
     async function render() {
         try {
             const { moduleId, lessonId, stepId } = parseHash();
@@ -268,7 +295,9 @@
             const path = `modules/module-${moduleId}/lesson-${lessonId}/steps/step-${stepId}.html`;
             console.log('Carregando:', path);
 
-            const html = await loadStepContent(moduleId, lessonId, stepId);
+            let html = await loadStepContent(moduleId, lessonId, stepId);
+            // Corrige os caminhos das imagens
+            html = fixImagePaths(html);
             const content = document.getElementById('content');
             content.innerHTML = html;
             renderStepper(lesson, stepId);
