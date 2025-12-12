@@ -1032,21 +1032,14 @@
 .exercise-options {
     display: flex;
     flex-direction: column;
-    gap: 18px;
-    padding-left: 60px;
+    gap: 16px;
 }
 
 .exercise-option {
     display: flex;
     align-items: flex-start;
-    gap: 16px;
+    gap: 12px;
     cursor: pointer;
-    padding: 8px 0;
-    transition: background-color 0.2s ease;
-}
-
-.exercise-option:hover {
-    background-color: rgba(251, 185, 52, 0.05);
 }
 
 .exercise-option input[type="radio"] {
@@ -1058,46 +1051,46 @@
 }
 
 .radio-custom {
-    width: 16px;
-    height: 16px;
-    min-width: 16px;
-    border: 1.05px solid #A1A191;
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    min-height: 20px;
+    border: 2px solid #191915;
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #FFFFFF;
-    margin-top: 3px;
+    background-color: #F8FAF7;
     position: relative;
-    transition: all 0.2s ease;
+    flex-shrink: 0;
+    margin-top: 6px;
+    box-sizing: border-box;
+    display: block;
 }
 
-.exercise-option:hover .radio-custom {
-    border-color: #000000;
-}
-
-.exercise-option input[type="radio"]:checked ~ .radio-custom {
+.exercise-option input[type="radio"]:checked + .radio-custom {
     background-color: #FBB934;
-    border-color: #FBB934;
+    border-color: #191915;
 }
 
-.exercise-option input[type="radio"]:checked ~ .radio-custom::before {
-    content: "";
+.exercise-option input[type="radio"]:checked + .radio-custom::after {
+    content: '';
     position: absolute;
-    width: 8px;
-    height: 5.5px;
-    border-left: 1.05px solid #FFFFFF;
-    border-bottom: 1.05px solid #FFFFFF;
-    transform: rotate(-45deg) translateY(-1px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 5px;
+    height: 9px;
+    border: solid #FFFFFF;
+    border-width: 0 2px 2px 0;
 }
 
 .option-text {
-    font-family: var(--font-family);
+    font-family: 'Montserrat', sans-serif;
     font-weight: 300;
     font-size: 20px;
     line-height: 1.6;
     letter-spacing: 0.5%;
-    color: #000000;
+    color: #191915;
+    margin: 0;
+    padding: 0;
     flex: 1;
 }
 

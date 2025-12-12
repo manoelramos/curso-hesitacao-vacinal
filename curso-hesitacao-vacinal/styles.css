@@ -173,7 +173,7 @@ body {
 .nav-text {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 1.5;
     color: #191915;
 }
@@ -183,7 +183,203 @@ body {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 12px;
+}
+
+/* Sidebar tree (módulos e aulas) */
+.sidebar-tree {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sidebar-module {
+    border-bottom: 1px solid #E4D8B5;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+}
+
+.sidebar-module:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.sidebar-module-header {
+    width: 100%;
+    border: none;
+    background: transparent;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+    position: relative;
+}
+
+.module-top {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.module-indicator {
+    width: 22px;
+    height: 22px;
+    border: 1.2px solid #9C9270;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    color: #9C9270;
+    background: #FFFFFF;
+}
+
+.module-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 1.4;
+    color: #4A3D02;
+}
+
+.module-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 1.4;
+    color: #4A3D02;
+    margin-top: 4px;
+    margin-bottom: 12px;
+}
+
+.module-chevron {
+    position: absolute;
+    right: 0;
+    top: 4px;
+    width: 10px;
+    height: 10px;
+    border-right: 1.5px solid #9C9270;
+    border-bottom: 1.5px solid #9C9270;
+    transform: rotate(45deg);
+    transition: transform 0.2s ease, top 0.2s ease;
+}
+
+.sidebar-module.open .module-chevron {
+    transform: rotate(225deg);
+    top: 6px;
+}
+
+.sidebar-lessons {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    padding: 0;
+}
+
+.sidebar-module.open .sidebar-lessons {
+    display: flex;
+}
+
+/* Lesson Groups */
+.lesson-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.lesson-header {
+    background: none;
+    border: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    text-align: left;
+}
+
+.lesson-chevron {
+    position: relative;
+    width: 10px;
+    height: 10px;
+    border-right: 1.5px solid #9C9270;
+    border-bottom: 1.5px solid #9C9270;
+    transform: rotate(45deg);
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+}
+
+.lesson-group.open .lesson-chevron {
+    transform: rotate(225deg);
+}
+
+.lesson-number {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    line-height: 1.4;
+    color: #191915;
+}
+
+.lesson-title-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 1.4;
+    color: #4A3D02;
+    font-style: italic;
+    padding-left: 16px;
+}
+
+/* Lesson Steps */
+.lesson-steps {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 6px;
+    padding-left: 16px;
+}
+
+.lesson-group.open .lesson-steps {
+    display: flex;
+}
+
+.step-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 4px 0;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.step-item:hover {
+    opacity: 0.8;
+}
+
+.step-icon {
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+.step-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 1.4;
+    color: #191915;
+}
+
+.step-item.active .step-title {
+    font-weight: 600;
+}
+
+.step-item.completed .step-title {
+    opacity: 0.8;
 }
 
 .stepper-lesson {
@@ -834,8 +1030,8 @@ body {
 .image-caption {
     font-family: 'Montserrat', sans-serif !important;
     font-weight: 400 !important;
-    font-size: 11px !important;
-    line-height: 1.219 !important;
+    font-size: 12px !important;
+    line-height: 1.4 !important;
     letter-spacing: 1.5% !important;
     color: #000000 !important;
     text-align: left !important;
@@ -844,37 +1040,32 @@ body {
 }
 
 /* Accessibility Box - Box de acessibilidade #PraTodosVerem */
-.accessibility-box {
-    display: flex;
-    flex-direction: row;
-    gap: 16px;
-    padding: 16px 12px;
-    background-color: #F8FAF7;
-    border: 0.5px dashed #FBB934;
-    border-radius: 8px;
-    margin: 48px 0;
-    width: 100%;
-}
-
-.accessibility-title {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 1.333;
-    color: #191915;
-    margin: 0;
-    flex-shrink: 0;
+.accessibility-box,
+.accessibility-title,
+.accessibility-label {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    clip-path: inset(50%) !important;
+    border: 0 !important;
+    white-space: nowrap !important;
 }
 
 .accessibility-text {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-    font-style: italic;
-    font-size: 12px;
-    line-height: 1.333;
-    color: #191915;
-    margin: 0;
-    flex: 1;
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    clip-path: inset(50%) !important;
+    border: 0 !important;
+    white-space: nowrap !important;
 }
 
 /* Info Box - Boxes de Saiba Mais e Importante */
@@ -1021,16 +1212,17 @@ body {
 }
 
 .exercise-number-icon {
-    width: 32px;
-    height: 32px;
+    width: 14px;
+    height: 14px;
     flex-shrink: 0;
+    display: block;
 }
 
 .exercise-question {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     font-size: 16px;
-    line-height: 1.219;
+    line-height: 1.5;
     letter-spacing: 0.5%;
     color: #191915;
     margin: 0;
@@ -1040,29 +1232,37 @@ body {
 .exercise-options {
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 16px;
 }
 
 .exercise-option {
     display: flex;
-    align-items: center;
-    gap: 16px;
-    padding-left: 60px;
+    align-items: flex-start;
+    gap: 12px;
     cursor: pointer;
+    position: relative;
 }
 
 .exercise-option input[type="radio"] {
-    display: none;
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
 
 .radio-custom {
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    min-height: 20px;
     border: 2px solid #191915;
     border-radius: 50%;
     background-color: #F8FAF7;
     position: relative;
     flex-shrink: 0;
+    margin-top: 6px;
+    box-sizing: border-box;
+    display: block;
 }
 
 .exercise-option input[type="radio"]:checked + .radio-custom {
@@ -1089,6 +1289,9 @@ body {
     line-height: 1.6;
     letter-spacing: 0.5%;
     color: #191915;
+    margin: 0;
+    padding: 0;
+    flex: 1;
 }
 
 .exercise-option.correct {
@@ -1116,19 +1319,44 @@ body {
     opacity: 0.5;
 }
 
+/* Estilos para exercícios estáticos (já resolvidos/exemplos) */
+.exercise-number {
+    flex-shrink: 0;
+    margin-top: 4px;
+}
+
+.exercise-option-correct {
+    opacity: 1;
+}
+
+.exercise-option input[type="radio"]:disabled {
+    cursor: not-allowed;
+}
+
+.exercise-option input[type="radio"]:disabled ~ .radio-custom {
+    cursor: not-allowed;
+}
+
+.radio-correct {
+    border-color: #191915;
+    background: #F8FAF7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.check-icon {
+    position: absolute;
+}
+
+.option-text-incorrect {
+    color: #191915;
+    opacity: 0.5;
+}
+
 /* Botão Checar Resposta */
 .check-answer-button {
-    background-color: #FBB934;
-    color: #191915;
-    border: none;
-    border-radius: 8px;
-    padding: 12px 24px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 24px;
-    transition: background-color 0.2s ease, transform 0.1s ease;
+    display: none !important;
 }
 
 .check-answer-button:hover {
@@ -1168,6 +1396,113 @@ body {
     border: 1px solid #F5C6CB;
     color: #721C24;
     display: block;
+}
+
+/* Caixa de Referências */
+.references-box {
+    border: 2px solid #191915;
+    border-bottom: 4px solid #191915;
+    border-radius: 12px;
+    margin-top: 48px;
+    background: white;
+}
+
+.references-header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 24px;
+    background: #109D82;
+    border-bottom: 2px solid #191915;
+    border-radius: 12px 12px 0 0;
+}
+
+.references-icon {
+    flex-shrink: 0;
+}
+
+.references-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.17;
+    color: #191915;
+    margin: 0;
+}
+
+.references-content {
+    padding: 24px;
+}
+
+.references-content p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.43;
+    letter-spacing: 0.0025em;
+    color: #191915;
+    margin: 0 0 16px 0;
+}
+
+.references-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Estilos para elementos de exercícios com estrutura especial */
+.exercise-statements {
+    margin: 24px 0;
+}
+
+.exercise-statement {
+    margin: 0 0 16px 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #191915;
+}
+
+.info-box-content .statement-text {
+    margin: 0 0 16px 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #6B6B6B;
+}
+
+.info-box-content .link-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 24px;
+}
+
+.info-box-content .link-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.info-box-content .link-item svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.info-box-content .link-item-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #191915;
+}
+
+.info-box-content .link-item a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #6B6B6B;
+    text-decoration: underline;
+    word-break: break-word;
 }
 
 /* ============================================
@@ -1577,8 +1912,8 @@ img.num-icon {
 .info-box-content p {
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
-    font-size: 14px;
-    line-height: 1.4285714285714286em;
+    font-size: 16px;
+    line-height: 1.6em;
     letter-spacing: 0.25%;
     color: #191915;
     margin: 0 0 12px 0;
@@ -1681,8 +2016,8 @@ img.num-icon {
 .alert-content p {
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
-    font-size: 14px;
-    line-height: 1.429;
+    font-size: 16px;
+    line-height: 1.6;
     letter-spacing: 0.25%;
     color: #191915;
     margin: 0 0 12px 0;
@@ -1760,8 +2095,8 @@ img.num-icon {
 .figure-caption {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
-    font-size: 11px;
-    line-height: 1.219;
+    font-size: 12px;
+    line-height: 1.4;
     letter-spacing: 1.5%;
     color: #000000;
     text-align: left;
@@ -2245,8 +2580,6 @@ img.num-icon {
     width: 16px;
     height: 17px;
     margin-top: 4px;
-}
-    height: 14px;
 }
 
 .card-number svg {

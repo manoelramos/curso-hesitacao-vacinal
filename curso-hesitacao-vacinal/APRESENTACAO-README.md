@@ -143,3 +143,4 @@ Cada botão "Começar" redireciona para o módulo correspondente:
 - Firefox (últimas versões)
 - Safari (últimas versões)
 - Dispositivos móveis iOS e Android
+

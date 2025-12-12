@@ -62,44 +62,89 @@
         }
     }
 
-    function renderStepper(lesson, currentStepId) {
-        const stepperRoot = document.getElementById('stepper-root');
-        if (!stepperRoot) return;
-        const lessonTitleEl = document.querySelector('.stepper-lesson-title');
-        const lessonDescEl = document.querySelector('.stepper-lesson-description');
-        if (lessonTitleEl) lessonTitleEl.textContent = `Aula ${lesson.id}`;
-        if (lessonDescEl) lessonDescEl.textContent = lesson.title || '';
-        const lines = [];
-        (lesson.steps || []).forEach((s, idx) => {
-            const stateClass = s.id === currentStepId ? ' active' : (s.id < currentStepId ? ' completed' : '');
-            lines.push(`<div class="topic-item${stateClass}" data-step="${s.id}">`);
-            if (stateClass.includes('completed')) {
-                lines.push('  <svg class="topic-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">');
-                lines.push('    <circle cx="12" cy="12" r="11" fill="#FBB934"/>');
-                lines.push('    <path d="M7 12l3 3 7-7" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>');
-                lines.push('  </svg>');
-            } else if (stateClass.includes('active')) {
-                lines.push('  <svg class="topic-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">');
-                lines.push('    <circle cx="12" cy="12" r="11" fill="#FBB934"/>');
-                lines.push('  </svg>');
-            } else {
-                lines.push('  <svg class="topic-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">');
-                lines.push('    <circle cx="12" cy="12" r="11" fill="#F0F0DA" stroke="#FBB934" stroke-width="1"/>');
-                lines.push('  </svg>');
-            }
-            lines.push(`  <span class="topic-text">${s.title}</span>`);
-            lines.push('</div>');
-            if (idx < (lesson.steps.length - 1)) {
-                lines.push('<div class="topic-line"></div>');
-            }
-        });
-        stepperRoot.innerHTML = lines.join('\n');
+    function renderSidebarTree(structure, currentModuleId, currentLessonId, currentStepId) {
+        const root = document.getElementById('stepper-root');
+        if (!root) return;
 
-        stepperRoot.querySelectorAll('.topic-item').forEach(el => {
-            el.addEventListener('click', () => {
-                const stepId = +el.getAttribute('data-step');
-                const { moduleId, lessonId } = parseHash();
-                location.hash = `#/modulo/${moduleId}/aula/${lessonId}/step/${stepId}`;
+        const lines = [];
+        lines.push('<div class="sidebar-tree">');
+
+        (structure.modules || []).forEach((module, moduleIdx) => {
+            const isCurrentModule = module.id === currentModuleId;
+            const openClass = isCurrentModule || moduleIdx === 0 ? ' open' : '';
+            lines.push(`<div class="sidebar-module${openClass}" data-module="${module.id}">`);
+            lines.push('  <button class="sidebar-module-header" type="button">');
+            lines.push('    <div class="module-top">');
+            lines.push('      <span class="module-chevron"></span>');
+            lines.push('      <div class="module-text">');
+            lines.push(`        <div class="module-title">Módulo ${module.id}</div>`);
+            lines.push('      </div>');
+            lines.push('    </div>');
+            lines.push('  </button>');
+            lines.push(`  <div class="module-subtitle">${module.title || ''}</div>`);
+
+            lines.push('  <div class="sidebar-lessons">');
+            (module.lessons || []).forEach(lesson => {
+                const isCurrentLesson = isCurrentModule && lesson.id === currentLessonId;
+                const lessonOpenClass = isCurrentLesson ? ' open' : '';
+
+                lines.push(`    <div class="lesson-group${lessonOpenClass}" data-module="${module.id}" data-lesson="${lesson.id}">`);
+                lines.push('      <button class="lesson-header" type="button">');
+                lines.push('        <span class="lesson-chevron"></span>');
+                lines.push(`        <span class="lesson-number">Aula ${lesson.id}</span>`);
+                lines.push('      </button>');
+                lines.push(`      <div class="lesson-title-text">${lesson.title || ''}</div>`);
+
+                // Steps dentro da aula
+                lines.push('      <div class="lesson-steps">');
+                (lesson.steps || []).forEach((step, stepIdx) => {
+                    const isActiveStep = isCurrentModule && lesson.id === currentLessonId && step.id === currentStepId;
+                    // Um step é completado se:
+                    // 1. A aula é anterior à aula atual (no mesmo módulo)
+                    // 2. OU está na aula atual mas é um step anterior ao atual
+                    const isPreviousLesson = isCurrentModule && lesson.id < currentLessonId;
+                    const isCompleted = isPreviousLesson || (isCurrentLesson && step.id < currentStepId);
+                    const stepClass = isActiveStep ? ' active' : (isCompleted ? ' completed' : '');
+
+                    lines.push(`        <a class="step-item${stepClass}" href="#/modulo/${module.id}/aula/${lesson.id}/step/${step.id}">`);
+                    lines.push('          <svg class="step-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">');
+
+                    if (isCompleted) {
+                        lines.push('            <circle cx="8" cy="8" r="6" fill="#FBB934"/>');
+                        lines.push('            <path d="M5 8l2 2 4-4" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>');
+                    } else if (isActiveStep) {
+                        lines.push('            <circle cx="8" cy="8" r="6" fill="#FBB934"/>');
+                    } else {
+                        lines.push('            <circle cx="8" cy="8" r="6" stroke="#FBB934" stroke-width="1.5" fill="none"/>');
+                    }
+
+                    lines.push('          </svg>');
+                    lines.push(`          <span class="step-title">${step.title || ''}</span>`);
+                    lines.push('        </a>');
+                });
+                lines.push('      </div>');
+                lines.push('    </div>');
+            });
+            lines.push('  </div>');
+            lines.push('</div>');
+        });
+
+        lines.push('</div>');
+        root.innerHTML = lines.join('\n');
+
+        // Toggling modules
+        root.querySelectorAll('.sidebar-module-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const parent = header.closest('.sidebar-module');
+                if (parent) parent.classList.toggle('open');
+            });
+        });
+
+        // Toggling lessons
+        root.querySelectorAll('.lesson-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const parent = header.closest('.lesson-group');
+                if (parent) parent.classList.toggle('open');
             });
         });
     }
@@ -300,7 +345,7 @@
             html = fixImagePaths(html);
             const content = document.getElementById('content');
             content.innerHTML = html;
-            renderStepper(lesson, stepId);
+            renderSidebarTree(structure, moduleId, lessonId, stepId);
             renderPrevNext(lesson, stepId, module, structure);
 
             // Inicializa as tabs após o conteúdo ser carregado
@@ -356,6 +401,19 @@
                                     opt.classList.add('correct');
                                 }
                             });
+                        }
+
+                        // Feedback automático
+                        const feedbackDiv = container.querySelector('.exercise-feedback');
+                        if (feedbackDiv) {
+                            feedbackDiv.style.display = 'block';
+                            if (selectedOption === correctOption) {
+                                feedbackDiv.className = 'exercise-feedback correct';
+                                feedbackDiv.textContent = '✓ Resposta correta! Parabéns!';
+                            } else {
+                                feedbackDiv.className = 'exercise-feedback incorrect';
+                                feedbackDiv.textContent = '✗ Resposta incorreta. A resposta correta está destacada em verde.';
+                            }
                         }
                     });
                 }
@@ -427,14 +485,13 @@
             initializeTabs();
             initializeVaccineTabs();
             initializeExercises();
-            initializeCheckButtons();
         }, 100);
     });
 
     // Re-initialize after content changes (hash navigation)
     window.addEventListener('hashchange', function() {
         setTimeout(() => {
-            initializeCheckButtons();
+            initializeExercises();
         }, 100);
     });
 })();
