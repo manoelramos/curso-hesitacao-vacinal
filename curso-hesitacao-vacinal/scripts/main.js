@@ -191,6 +191,10 @@
                         nextHref = `#/modulo/${nextModule.id}/aula/${nextModule.lessons[0].id}/step/1`;
                         nextButtonText = 'Próximo Módulo';
                     }
+                } else {
+                    // Se for o último step do último módulo, vai para o encerramento
+                    nextHref = 'encerramento.html';
+                    nextButtonText = 'Encerramento';
                 }
             }
         } else {
@@ -221,9 +225,14 @@
             b.addEventListener('click', () => {
                 const href = b.getAttribute('data-href');
                 if (href) {
-                    location.hash = href.replace('#', '');
-                    // Scroll para o topo da página
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    // Se for uma página HTML (não um hash), navega diretamente
+                    if (href.endsWith('.html')) {
+                        window.location.href = href;
+                    } else {
+                        location.hash = href.replace('#', '');
+                        // Scroll para o topo da página
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
                 }
             });
         });

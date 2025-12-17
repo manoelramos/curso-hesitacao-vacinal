@@ -974,3 +974,237 @@ body.apresentacao-page article.module-card.module-4 .card-header h3.apresentacao
         max-width: 300px;
     }
 }
+
+/* ============================================
+   BOX OBJETIVO DO CURSO (Encerramento)
+   ============================================ */
+
+.objetivo-curso-box {
+    background-color: #F0F0DA;
+    border: 2px solid #191915;
+    border-radius: 16px;
+    padding: 32px;
+    margin: 40px 0;
+}
+
+.objetivo-curso-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-bottom: 24px;
+    border-bottom: 2px solid #191915;
+    margin-bottom: 24px;
+}
+
+.objetivo-curso-icon {
+    flex-shrink: 0;
+    color: #191915;
+}
+
+.objetivo-curso-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.3333333333333333em;
+    color: #191915;
+    margin: 0;
+}
+
+.objetivo-curso-content {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.5555555555555556em;
+    color: #191915;
+}
+
+.objetivo-curso-content p {
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .objetivo-curso-box {
+        padding: 24px;
+    }
+
+    .objetivo-curso-header {
+        gap: 12px;
+        padding-bottom: 16px;
+        margin-bottom: 16px;
+    }
+
+    .objetivo-curso-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .objetivo-curso-title {
+        font-size: 20px;
+    }
+
+    .objetivo-curso-content {
+        font-size: 16px;
+    }
+}
+
+/* ============================================
+   PÁGINA DE ENCERRAMENTO
+   ============================================ */
+
+body.encerramento-page .header-apresentacao {
+    padding: 14px 40px;
+}
+
+body.encerramento-page .header-nav {
+    gap: 24px;
+}
+
+body.encerramento-page .hero-banner {
+    display: none;
+}
+
+/* Hero Encerramento */
+.encerramento-hero {
+    background-color: #F0F0DA;
+    padding: 48px 24px 64px;
+    border-bottom: 2px solid #C4C4B0;
+    text-align: center;
+}
+
+.encerramento-hero-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.encerramento-hero-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: #191915;
+    margin: 0 0 12px 0;
+}
+
+.encerramento-hero-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 1.3em;
+    color: #2A1F0F;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .encerramento-hero {
+        padding: 36px 20px 48px;
+    }
+    .encerramento-hero-title {
+        font-size: 28px;
+    }
+}
+
+.apresentacao-page .apresentacao-hero {
+    background-color: #F0F0DA;
+    padding: 48px 24px 64px;
+    border-bottom: 2px solid #C4C4B0;
+    text-align: center;
+}
+
+.apresentacao-page .apresentacao-hero-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.apresentacao-page .apresentacao-hero-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: #191915;
+    margin: 0 0 12px 0;
+}
+
+.apresentacao-page .apresentacao-hero-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 1.3em;
+    color: #2A1F0F;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .apresentacao-page .apresentacao-hero {
+        padding: 36px 20px 48px;
+    }
+    .apresentacao-page .apresentacao-hero-title {
+        font-size: 28px;
+    }
+}
+
+body.encerramento-page .apresentacao-main {
+    padding: 80px 24px 120px;
+}
+
+body.encerramento-page .apresentacao-container {
+    max-width: 940px;
+    margin: 0 auto;
+}
+
+body.encerramento-page .lesson-title {
+    align-items: flex-start;
+    margin-bottom: 32px;
+}
+
+body.encerramento-page .title-line {
+    width: 140px;
+    margin-top: 16px;
+    margin-left: 0;
+}
+
+body.encerramento-page .lesson-body {
+    gap: 32px;
+}
+
+body.encerramento-page .lesson-body p {
+    font-size: 20px;
+    line-height: 1.6em;
+    margin: 0;
+}
+
+body.encerramento-page .objetivo-curso-box {
+    margin-top: 32px;
+}
+
+/* Encerramento - bloco final */
+.encerramento-final {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    margin-top: 40px;
+}
+
+.encerramento-final p {
+    font-size: 20px;
+    line-height: 1.6em;
+    margin: 0;
+}
+
+.closing-line {
+    width: 100px;
+    height: 2px;
+    background-color: #191915;
+    border: none;
+    margin: 12px auto 16px;
+}
+
+.closing-cta {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.6em;
+    color: #191915;
+}
