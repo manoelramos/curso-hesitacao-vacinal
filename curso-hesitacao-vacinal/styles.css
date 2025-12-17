@@ -65,24 +65,44 @@ body {
     gap: 12px;
 }
 
-.module-number {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 1.2;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: #211502;
-    margin: 0;
+.module-number,
+h1.module-number {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 500 !important;
+    font-style: normal !important;
+    font-size: 27px !important;
+    line-height: 32px !important;
+    letter-spacing: 0.16em !important;
+    text-transform: uppercase !important;
+    color: #211502 !important;
+    margin: 0 !important;
 }
 
-.module-title {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 800;
-    font-size: 44px;
-    line-height: 1.2;
-    color: #211502;
-    margin: 0;
+.module-title,
+h2.module-title {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 800 !important;
+    font-style: normal !important;
+    font-size: 44px !important;
+    line-height: 54px !important;
+    letter-spacing: 0 !important;
+    color: #211502 !important;
+    margin: 0 !important;
+}
+
+/* Estilos específicos para o menu lateral - não devem seguir os estilos do header */
+.sidebar .module-title,
+.sidebar-module .module-title,
+.sidebar-tree .module-title {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+    letter-spacing: 0 !important;
+    color: inherit !important;
+    margin: 0 !important;
+    text-transform: none !important;
 }
 
 /* Sidebar */
@@ -127,7 +147,7 @@ body {
 .logo-subtitle {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
-    font-size: 12px;
+    font-size: 15px;
     line-height: 1.5;
     color: #191915;
     text-align: center;
@@ -173,7 +193,7 @@ body {
 .nav-text {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
-    font-size: 12px;
+    font-size: 15px;
     line-height: 1.5;
     color: #191915;
 }
@@ -238,10 +258,10 @@ body {
     background: #FFFFFF;
 }
 
-.module-title {
+.sidebar .module-title {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    font-size: 12px;
+    font-size: 15px;
     line-height: 1.4;
     color: #4A3D02;
 }
@@ -249,7 +269,7 @@ body {
 .module-subtitle {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
-    font-size: 11px;
+    font-size: 15px;
     line-height: 1.4;
     color: #4A3D02;
     margin-top: 4px;
@@ -289,6 +309,15 @@ body {
     display: flex;
     flex-direction: column;
     gap: 4px;
+    border-bottom: 1px solid #E4D8B5 !important;
+    padding-bottom: 12px !important;
+    margin-bottom: 12px !important;
+}
+
+.sidebar-lessons .lesson-group:last-child {
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
 }
 
 .lesson-header {
@@ -319,8 +348,8 @@ body {
 
 .lesson-number {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 11px;
+    font-weight: 400;
+    font-size: 15px;
     line-height: 1.4;
     color: #191915;
 }
@@ -328,7 +357,7 @@ body {
 .lesson-title-text {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
-    font-size: 10px;
+    font-size: 15px;
     line-height: 1.4;
     color: #4A3D02;
     font-style: italic;
@@ -369,7 +398,7 @@ body {
 .step-title {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
-    font-size: 10px;
+    font-size: 15px;
     line-height: 1.4;
     color: #191915;
 }
@@ -391,7 +420,7 @@ body {
 .stepper-lesson-title {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
-    font-size: 10px;
+    font-size: 15px;
     line-height: 1.6;
     letter-spacing: 1.5%;
     text-transform: uppercase;
@@ -402,7 +431,7 @@ body {
 .stepper-lesson-description {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 15px;
     line-height: 1.5;
     color: #4A3D02;
     margin: 0;
@@ -642,6 +671,17 @@ body {
     flex-shrink: 0;
 }
 
+/* Quando structure-number for uma imagem */
+img.structure-number {
+    width: 14px;
+    height: 14px;
+    min-width: 14px;
+    display: block;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+}
+
 .structure-text {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
@@ -677,7 +717,8 @@ body {
 .objective-item {
     display: flex;
     align-items: flex-start;
-    gap: 16px;
+    gap: 12px;
+    margin-bottom: 12px;
 }
 
 .objective-icon-target {
@@ -871,11 +912,13 @@ body {
 
 @media (max-width: 768px) {
     .module-number {
-        font-size: 18px;
+        font-size: 24px;
+        line-height: 28px;
     }
 
     .module-title {
-        font-size: 28px;
+        font-size: 36px;
+        line-height: 44px;
     }
 
     .lesson-title h1 {
@@ -1206,7 +1249,7 @@ body {
 
 .exercise-header {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     gap: 16px;
     margin-bottom: 18px;
 }
@@ -1216,6 +1259,7 @@ body {
     height: 14px;
     flex-shrink: 0;
     display: block;
+    margin-top: 0.2em;
 }
 
 .exercise-question {
@@ -1346,7 +1390,16 @@ body {
 }
 
 .check-icon {
-    position: absolute;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.objective-item .check-icon {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    flex-shrink: 0;
+    margin-top: 4px;
 }
 
 .option-text-incorrect {
@@ -1523,9 +1576,10 @@ body {
 }
 
 .list-number-icon {
-    width: 16px;
-    height: 17px;
+    width: 14px;
+    height: 14px;
     flex-shrink: 0;
+    display: block;
 }
 
 .list-section .enumerated-list {
@@ -1767,12 +1821,18 @@ body {
 
 .timeline-multiple-entries {
     display: flex;
+    flex-direction: column;
     align-items: flex-start;
     gap: 12px;
 }
 
 .timeline-multiple-entries .timeline-arrow-icon {
     margin-top: 0;
+    order: 2;
+}
+
+.timeline-multiple-entries .timeline-entry-text {
+    order: 1;
 }
 
 .timeline-source {
@@ -1805,8 +1865,8 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 16px;
-    height: 17px;
+    width: 14px;
+    height: 14px;
     flex-shrink: 0;
     margin-top: 4px;
     /* Estilos para quando for texto */
@@ -1825,6 +1885,8 @@ img.num-icon {
     border-radius: 0;
     background: transparent;
     box-shadow: none;
+    width: 14px;
+    height: 14px;
 }
 
 .list-text {
@@ -3629,4 +3691,15 @@ body.module-4 .info-box.voce-sabia .info-box-header {
 
 body.module-4 .info-box.video-box .info-box-header {
     background-color: #109D82 !important;
+}
+
+/* Legendas de imagens */
+figcaption {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #191915;
+    margin-top: 8px;
+    text-align: left;
 }

@@ -147,6 +147,13 @@
                 if (parent) parent.classList.toggle('open');
             });
         });
+
+        // Scroll para o topo ao clicar nos links do sidebar
+        root.querySelectorAll('.step-item').forEach(link => {
+            link.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
     }
 
     function renderPrevNext(lesson, currentStepId, module, structure) {
@@ -215,6 +222,8 @@
                 const href = b.getAttribute('data-href');
                 if (href) {
                     location.hash = href.replace('#', '');
+                    // Scroll para o topo da página
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
                 }
             });
         });
@@ -305,7 +314,7 @@
 
     function fixImagePaths(html) {
         const basePath = getBasePath();
-        // Corrige caminhos relativos que começam com assets/ ou ../../../../assets/
+        // Corrige caminhos relativos que começam com assets/ ou assets/
         html = html.replace(
             /src=["'](?:\.\.\/)+assets\/([^"']+)["']/g,
             `src="${basePath}assets/$1"`
@@ -324,6 +333,9 @@
 
     async function render() {
         try {
+            // Scroll para o topo sempre que renderizar uma nova página
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
             const { moduleId, lessonId, stepId } = parseHash();
             console.log('Navegando para:', { moduleId, lessonId, stepId });
             console.log('Hash atual:', location.hash);
@@ -352,6 +364,8 @@
             setTimeout(() => {
                 initializeTabs();
                 initializeVaccineTabs();
+                // Garante scroll para o topo após o conteúdo ser carregado
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             }, 100);
         } catch (e) {
             console.error('Erro ao carregar step:', e);

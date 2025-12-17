@@ -298,6 +298,17 @@
     flex-shrink: 0;
 }
 
+/* Quando structure-number for uma imagem */
+img.structure-number {
+    width: 14px;
+    height: 14px;
+    min-width: 14px;
+    display: block;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+}
+
 .structure-text {
     font-family: var(--font-family);
     font-weight: 400;
@@ -937,10 +948,11 @@
 }
 
 .vaccine-panel p {
-    font-family: var(--font-family);
+    font-family: 'Montserrat', sans-serif;
     font-weight: 300;
-    font-size: var(--font-size-md);
-    line-height: 1.429;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 20px;
     letter-spacing: 0.25%;
     color: var(--cream-text);
     margin: 0;
