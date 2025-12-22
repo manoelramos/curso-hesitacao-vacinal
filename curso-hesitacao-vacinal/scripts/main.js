@@ -72,6 +72,7 @@
         (structure.modules || []).forEach((module, moduleIdx) => {
             const isCurrentModule = module.id === currentModuleId;
             const openClass = isCurrentModule || moduleIdx === 0 ? ' open' : '';
+            const firstLessonId = (module.lessons && module.lessons[0] && module.lessons[0].id) || 1;
             lines.push(`<div class="sidebar-module${openClass}" data-module="${module.id}">`);
             lines.push('  <button class="sidebar-module-header" type="button">');
             lines.push('    <div class="module-top">');
@@ -81,19 +82,20 @@
             lines.push('      </div>');
             lines.push('    </div>');
             lines.push('  </button>');
-            lines.push(`  <div class="module-subtitle">${module.title || ''}</div>`);
+            lines.push(`  <a class="module-subtitle" href="#/modulo/${module.id}/aula/${firstLessonId}/step/1">${module.title || ''}</a>`);
 
             lines.push('  <div class="sidebar-lessons">');
             (module.lessons || []).forEach(lesson => {
                 const isCurrentLesson = isCurrentModule && lesson.id === currentLessonId;
                 const lessonOpenClass = isCurrentLesson ? ' open' : '';
+                const firstStepId = (lesson.steps && lesson.steps[0] && lesson.steps[0].id) || 1;
 
                 lines.push(`    <div class="lesson-group${lessonOpenClass}" data-module="${module.id}" data-lesson="${lesson.id}">`);
                 lines.push('      <button class="lesson-header" type="button">');
                 lines.push('        <span class="lesson-chevron"></span>');
                 lines.push(`        <span class="lesson-number">Aula ${lesson.id}</span>`);
                 lines.push('      </button>');
-                lines.push(`      <div class="lesson-title-text">${lesson.title || ''}</div>`);
+                lines.push(`      <a class="lesson-title-text" href="#/modulo/${module.id}/aula/${lesson.id}/step/${firstStepId}">${lesson.title || ''}</a>`);
 
                 // Steps dentro da aula
                 lines.push('      <div class="lesson-steps">');
@@ -373,6 +375,8 @@
             setTimeout(() => {
                 initializeTabs();
                 initializeVaccineTabs();
+                initializeExercises();
+                initializeCheckButtons();
                 // Garante scroll para o topo após o conteúdo ser carregado
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }, 100);
@@ -480,11 +484,19 @@
                     selectedInput.parentElement.classList.add('correct');
                     if (feedbackDiv) {
                         feedbackDiv.className = 'exercise-feedback correct';
-                        feedbackDiv.textContent = '✓ Resposta correta! Parabéns!';
+
+                        // Feedback personalizado para a pergunta sobre primeira vacina
+                        if (exerciseNumber === "1" && container.querySelector('.exercise-question').textContent.includes('primeira vacina da história')) {
+                            feedbackDiv.textContent = '✓ Correto! A primeira vacina da história foi desenvolvida no final do século XVIII para combater a varíola. O médico inglês Edward Jenner observou que pessoas expostas à varíola bovina desenvolviam imunidade contra a varíola humana. Com base nisso, em 1796, ele realizou a primeira inoculação bem-sucedida, marcando o início da imunização moderna.';
+                        } else if (exerciseNumber === "2" && container.querySelector('.exercise-question').textContent.includes('Marque a alternativa correta') && correctOption === 'c') {
+                            feedbackDiv.textContent = '✓ Correto! A preocupação das elites com a erradicação da varíola se deu porque observou-se a perda financeira e comercial que a doença acarretou e porque passou a acometer um maior contingente de pessoas de classes sociais superiores.';
+                        } else {
+                            feedbackDiv.textContent = '✓ Resposta correta! Parabéns!';
+                        }
                     }
                 } else {
                     selectedInput.parentElement.classList.add('incorrect');
-                    // Mostra a resposta correta
+                    // Mostra a resposta correta em verde
                     options.forEach(opt => {
                         if (opt.getAttribute('data-option') === correctOption) {
                             opt.classList.add('correct');
@@ -492,7 +504,39 @@
                     });
                     if (feedbackDiv) {
                         feedbackDiv.className = 'exercise-feedback incorrect';
-                        feedbackDiv.textContent = '✗ Resposta incorreta. A resposta correta está destacada em verde.';
+
+                        // Feedback personalizado para cada opção incorreta da pergunta sobre primeira vacina
+                        if (exerciseNumber === "1" && container.querySelector('.exercise-question').textContent.includes('primeira vacina da história')) {
+                            let incorrectMessage = '✗ Resposta incorreta. ';
+
+                            if (selectedOption === 'a') {
+                                incorrectMessage += 'Embora tenha causado grandes epidemias, como a Peste Negra, não foi a doença que levou ao desenvolvimento da primeira vacina. A vacina contra a peste bubônica surgiu apenas no final do século XIX. A resposta correta é: Varíola (opção destacada em verde).';
+                            } else if (selectedOption === 'c') {
+                                incorrectMessage += 'A vacina contra a cólera foi desenvolvida no século XIX por Jaime Ferrán e posteriormente aprimorada por Waldemar Haffkine, mas não foi a primeira da história. A resposta correta é: Varíola (opção destacada em verde).';
+                            } else if (selectedOption === 'd') {
+                                incorrectMessage += 'A pandemia de gripe espanhola ocorreu em 1918, mais de um século após a criação da primeira vacina, e as primeiras vacinas contra gripe só surgiram na década de 1940. A resposta correta é: Varíola (opção destacada em verde).';
+                            } else {
+                                incorrectMessage += 'A resposta correta está destacada em verde.';
+                            }
+
+                            feedbackDiv.textContent = incorrectMessage;
+                        } else if (exerciseNumber === "2" && container.querySelector('.exercise-question').textContent.includes('Marque a alternativa correta') && correctOption === 'c') {
+                            let incorrectMessage = '✗ Resposta incorreta. ';
+
+                            if (selectedOption === 'a') {
+                                incorrectMessage += 'A inoculação (variolização) realmente antecedeu as vacinas, mas há registros de seu uso muito antes do século XII, principalmente na China e na Índia, o que torna a afirmação imprecisa. A resposta correta está destacada em verde.';
+                            } else if (selectedOption === 'b') {
+                                incorrectMessage += 'Desde o início da vacinação houve resistência, seja por desconfiança, crenças religiosas, medo de efeitos adversos ou imposições governamentais. A resposta correta está destacada em verde.';
+                            } else if (selectedOption === 'd') {
+                                incorrectMessage += 'Os movimentos antivacinação começaram antes do século XX. Já havia resistências desde o século XIX, como o movimento antivacina na Inglaterra em resposta à obrigatoriedade da vacina contra a varíola. A resposta correta está destacada em verde.';
+                            } else {
+                                incorrectMessage += 'A resposta correta está destacada em verde.';
+                            }
+
+                            feedbackDiv.textContent = incorrectMessage;
+                        } else {
+                            feedbackDiv.textContent = '✗ Resposta incorreta. A resposta correta está destacada em verde.';
+                        }
                     }
                 }
 
@@ -508,6 +552,7 @@
             initializeTabs();
             initializeVaccineTabs();
             initializeExercises();
+            initializeCheckButtons();
         }, 100);
     });
 
@@ -515,6 +560,7 @@
     window.addEventListener('hashchange', function() {
         setTimeout(() => {
             initializeExercises();
+            initializeCheckButtons();
         }, 100);
     });
 })();

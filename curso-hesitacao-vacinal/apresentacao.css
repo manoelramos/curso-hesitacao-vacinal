@@ -36,7 +36,7 @@
 }
 
 .campus-logo {
-    height: 36px;
+    height: 60px;
     width: auto;
 }
 
@@ -339,27 +339,34 @@
 }
 
 .btn-start-all {
-    padding: 14px 32px;
-    border: none;
-    border-radius: 10px;
+    padding: 16px 40px;
+    border: 3px solid #191915;
+    border-radius: 16px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 16px;
     line-height: 1.2;
-    color: #191915;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
     background-color: #FBB934;
     cursor: pointer;
     transition: all 0.2s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 4px 4px 0px #191915;
 }
 
 .btn-start-all:hover {
-    background-color: #e2a42d;
-    transform: translateY(-2px);
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px #191915;
+    background-color: #FFC84A;
 }
 
 .btn-start-all:active {
-    transform: translateY(0);
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px #191915;
 }
 
 /* Botão Continuar */
@@ -523,18 +530,21 @@
 
 .footer-content-apresentacao {
     display: flex;
-    justify-content: space-between;
-    gap: 60px;
-    margin-bottom: 60px;
+    justify-content: center;
+    gap: 32px;
+    margin: 0 auto 60px;
     align-items: flex-start;
     width: 100%;
-    flex-wrap: nowrap;
+    max-width: 1200px;
+    flex-wrap: wrap;
 }
 
 .footer-section-apresentacao {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 16px;
+    align-items: center;
+    text-align: center;
 }
 
 .footer-section-apresentacao:first-child {
@@ -552,11 +562,14 @@
     line-height: 1.2;
     color: #191915;
     margin: 0;
+    text-align: center;
 }
 
 .footer-logos-apoio-apresentacao {
     display: flex;
     align-items: center;
+    justify-content: center;
+    gap: 24px;
 }
 
 .footer-logo-img-apresentacao {
@@ -571,7 +584,7 @@
     gap: 30px 24px;
     align-items: center;
     width: 100%;
-    justify-content: flex-start;
+    justify-content: center;
 }
 
 .footer-logo-realizacao-apresentacao {
