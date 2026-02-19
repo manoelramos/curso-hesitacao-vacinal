@@ -9,7 +9,7 @@
                     "title": "Uma breve história do desenvolvimento da vacina na história da humanidade",
                     "description": "Uma breve história do desenvolvimento da vacina na história da humanidade",
                     "steps": [
-                        { "id": 1, "title": "Início da Aula" },
+                        { "id": 1, "title": "Uma breve história do desenvolvimento da vacina na história da humanidade" },
                         { "id": 2, "title": "Introdução" },
                         { "id": 3, "title": "Os antecedentes da vacina" },
                         { "id": 4, "title": "O desenvolvimento da vacina contra varíola" },
@@ -22,12 +22,12 @@
                     "title": "Características e importância das vacinas",
                     "description": "Características e importância das vacinas",
                     "steps": [
-                        { "id": 1, "title": "Início da Aula" },
+                        { "id": 1, "title": "Características e importância das vacinas" },
                         { "id": 2, "title": "Como as vacinas funcionam?" },
                         { "id": 3, "title": "Os principais tipos de vacina" },
                         { "id": 4, "title": "Estratégias de vacinação" },
-                        { "id": 5, "title": "Fases de desenvolvimento da vacina" },
-                        { "id": 6, "title": "Porque a vacinação é tão importante?" },
+                        { "id": 5, "title": "Fases de desenvolvimento das vacinas" },
+                        { "id": 6, "title": "Por que a vacinação é tão importante?" },
                         { "id": 7, "title": "Exercícios" }
                     ]
                 },
@@ -36,7 +36,7 @@
                     "title": "Vacinas como estratégias de saúde global",
                     "description": "Vacinas como estratégias de saúde global",
                     "steps": [
-                        { "id": 1, "title": "Início da Aula" },
+                        { "id": 1, "title": "Vacinas como estratégias de saúde global" },
                         { "id": 2, "title": "A preocupação global com a vacinação" },
                         { "id": 3, "title": "Vacinação como parte dos Objetivos do Desenvolvimento Sustentável (2030)" },
                         { "id": 4, "title": "Exercícios" }
@@ -47,7 +47,7 @@
                     "title": "Ética em Imunizações",
                     "description": "Ética em Imunizações",
                     "steps": [
-                        { "id": 1, "title": "Início da Aula" },
+                        { "id": 1, "title": "Ética em Imunizações" },
                         { "id": 2, "title": "Ética e Bioética" },
                         { "id": 3, "title": "Princípios da Teoria Principialista" },
                         { "id": 4, "title": "Princípios para Políticas de Vacinação" },
@@ -66,10 +66,10 @@
                     "title": "História da Vacinação no Brasil",
                     "description": "História da Vacinação no Brasil",
                     "steps": [
-                        { "id": 1, "title": "Início da Aula" },
+                        { "id": 1, "title": "História da Vacinação no Brasil" },
                         { "id": 2, "title": "Introdução" },
-                        { "id": 3, "title": "Os antecedentes da vacina" },
-                        { "id": 4, "title": "O desenvolvimento da vacina contra varíola" },
+                        { "id": 3, "title": "Marcos históricos sobre a vacina e a vacinação no Brasil" },
+                        { "id": 4, "title": "Campanhas e iniciativas de erradicação de doenças pela vacinação no século XX" },
                         { "id": 5, "title": "Exercícios" }
                     ]
                 },
@@ -78,10 +78,10 @@
                     "title": "Política de Vacinação no Brasil (Política Nacional de Vacinação)",
                     "description": "Política de Vacinação no Brasil (Política Nacional de Vacinação)",
                     "steps": [
-                        { "id": 1, "title": "Início da Aula" },
-                        { "id": 2, "title": "Criação do Programa Nacional de Vacinação (PNI)" },
-                        { "id": 3, "title": "Principais características do Programa" },
-                        { "id": 4, "title": "Conjuntura atual e desafios" },
+                        { "id": 1, "title": "Política de Vacinação no Brasil (Política Nacional de Vacinação)" },
+                        { "id": 2, "title": "A criação do Programa Nacional de Vacinação (PNI)" },
+                        { "id": 3, "title": "Principais características do programa" },
+                        { "id": 4, "title": "Conjuntura atual e desafios para PNI" },
                         { "id": 5, "title": "Calendários e Estratégias de Vacinação" },
                         { "id": 6, "title": "Exercícios" }
                     ]
@@ -91,10 +91,12 @@
                     "title": "Cobertura Vacinal no Brasil",
                     "description": "Cobertura Vacinal no Brasil",
                     "steps": [
-                        { "id": 1, "title": "Início da Aula" },
+                        { "id": 1, "title": "Cobertura Vacinal no Brasil" },
                         { "id": 2, "title": "Coberturas Vacinais no Brasil" },
                         { "id": 3, "title": "Homogeneidade da Cobertura Vacinal" },
-                        { "id": 4, "title": "Exercícios" }
+                        { "id": 4, "title": "Exercícios" },
+                        { "id": 5, "title": "Estratégias de enfrentamento" },
+                        { "id": 6, "title": "Exercícios" }
                     ]
                 }
             ]
@@ -108,7 +110,7 @@
                     "title": "Conceituando hesitação: como e por que as pessoas não se vacinam?",
                     "description": "Conceituando hesitação: como e por que as pessoas não se vacinam?",
                     "steps": [
-                        { "id": 1, "title": "Início da Aula" },
+                        { "id": 1, "title": "Conceituando hesitação: como e por que as pessoas não se vacinam?" },
                         { "id": 2, "title": "Introdução" },
                         { "id": 3, "title": "Por que as pessoas hesitam?" },
                         { "id": 4, "title": "Mas o que é Hesitação Vacinal?" },
@@ -118,13 +120,13 @@
                 },
                 {
                     "id": 2,
-                    "title": "Determinantes da Hesitação Vacinal",
-                    "description": "Determinantes da Hesitação Vacinal",
+                    "title": "Modelos complementares ao da OMS (2012) - Comunicação e Contexto",
+                    "description": "Modelos complementares ao da OMS (2012) - Comunicação e Contexto",
                     "steps": [
-                        { "id": 1, "title": "Início da Aula" },
-                        { "id": 2, "title": "Modelo dos 3 C's" },
-                        { "id": 3, "title": "Determinantes Contextuais" },
-                        { "id": 4, "title": "Determinantes Individuais e de Grupo" },
+                        { "id": 1, "title": "Modelos complementares ao da OMS (2012) - Comunicação e Contexto" },
+                        { "id": 2, "title": "Introdução" },
+                        { "id": 3, "title": "A comunicação como determinante da hesitação vacinal" },
+                        { "id": 4, "title": "O contexto como determinante da hesitação vacinal" },
                         { "id": 5, "title": "Exercícios" }
                     ]
                 },
@@ -133,7 +135,7 @@
                     "title": "Movimento Antivacina",
                     "description": "Movimento Antivacina",
                     "steps": [
-                        { "id": 1, "title": "Início da Aula" },
+                        { "id": 1, "title": "Movimento Antivacina" },
                         { "id": 2, "title": "Histórico do movimento antivacina" },
                         { "id": 3, "title": "Movimento antivacina no mundo e no Brasil" },
                         { "id": 4, "title": "Movimento antivacina e as plataformas digitais" },

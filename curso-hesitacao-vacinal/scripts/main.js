@@ -62,6 +62,11 @@
         }
     }
 
+    const MODULE_STEP_COLORS = { 1: '#FBB934', 2: '#2E96D4', 3: '#EA5548', 4: '#109D82' };
+    function getModuleStepColor(moduleId) {
+        return MODULE_STEP_COLORS[moduleId] || '#FBB934';
+    }
+
     function renderSidebarTree(structure, currentModuleId, currentLessonId, currentStepId) {
         const root = document.getElementById('stepper-root');
         if (!root) return;
@@ -70,6 +75,7 @@
         lines.push('<div class="sidebar-tree">');
 
         (structure.modules || []).forEach((module, moduleIdx) => {
+            const stepColor = getModuleStepColor(module.id);
             const isCurrentModule = module.id === currentModuleId;
             const openClass = isCurrentModule || moduleIdx === 0 ? ' open' : '';
             const firstLessonId = (module.lessons && module.lessons[0] && module.lessons[0].id) || 1;
@@ -112,12 +118,12 @@
                     lines.push('          <svg class="step-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">');
 
                     if (isCompleted) {
-                        lines.push('            <circle cx="8" cy="8" r="6" fill="#FBB934"/>');
+                        lines.push(`            <circle cx="8" cy="8" r="6" fill="${stepColor}"/>`);
                         lines.push('            <path d="M5 8l2 2 4-4" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>');
                     } else if (isActiveStep) {
-                        lines.push('            <circle cx="8" cy="8" r="6" fill="#FBB934"/>');
+                        lines.push(`            <circle cx="8" cy="8" r="6" fill="${stepColor}"/>`);
                     } else {
-                        lines.push('            <circle cx="8" cy="8" r="6" stroke="#FBB934" stroke-width="1.5" fill="none"/>');
+                        lines.push(`            <circle cx="8" cy="8" r="6" stroke="${stepColor}" stroke-width="1.5" fill="none"/>`);
                     }
 
                     lines.push('          </svg>');
@@ -153,7 +159,7 @@
         // Scroll para o topo ao clicar nos links do sidebar
         root.querySelectorAll('.step-item').forEach(link => {
             link.addEventListener('click', () => {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+                window.scrollTo({ top: 0, behavior: 'auto' });
             });
         });
     }
@@ -233,7 +239,7 @@
                     } else {
                         location.hash = href.replace('#', '');
                         // Scroll para o topo da página
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        window.scrollTo({ top: 0, behavior: 'auto' });
                     }
                 }
             });
@@ -345,7 +351,7 @@
     async function render() {
         try {
             // Scroll para o topo sempre que renderizar uma nova página
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            window.scrollTo({ top: 0, behavior: 'auto' });
 
             const { moduleId, lessonId, stepId } = parseHash();
             console.log('Navegando para:', { moduleId, lessonId, stepId });
@@ -378,7 +384,7 @@
                 initializeExercises();
                 initializeCheckButtons();
                 // Garante scroll para o topo após o conteúdo ser carregado
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+                window.scrollTo({ top: 0, behavior: 'auto' });
             }, 100);
         } catch (e) {
             console.error('Erro ao carregar step:', e);

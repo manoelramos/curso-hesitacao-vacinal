@@ -375,7 +375,26 @@ h2.module-title {
     gap: 4px;
     margin-top: 6px;
     padding-left: 16px;
+    position: relative;
 }
+
+/* Linha vertical que conecta os ícones dos steps */
+.lesson-steps::before {
+    content: '';
+    position: absolute;
+    left: 23px;
+    top: 12px;
+    bottom: 12px;
+    width: 2px;
+    background-color: #FBB934;
+    opacity: 0.4;
+    z-index: 0;
+}
+
+.lesson-group[data-module="1"] .lesson-steps::before { background-color: #FBB934; }
+.lesson-group[data-module="2"] .lesson-steps::before { background-color: #2E96D4; }
+.lesson-group[data-module="3"] .lesson-steps::before { background-color: #EA5548; }
+.lesson-group[data-module="4"] .lesson-steps::before { background-color: #109D82; }
 
 .lesson-group.open .lesson-steps {
     display: flex;
@@ -388,6 +407,8 @@ h2.module-title {
     padding: 4px 0;
     text-decoration: none;
     cursor: pointer;
+    position: relative;
+    z-index: 1;
 }
 
 .step-item:hover {
@@ -1051,6 +1072,12 @@ img.structure-number {
     object-fit: cover;
 }
 
+.image-container--sem-moldura img {
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
 .image-container-small img {
     width: 100%;
     max-height: 400px;
@@ -1694,6 +1721,8 @@ img.structure-number {
     text-align: center;
     position: relative;
     padding: 24px 0;
+    width: 100%;
+    display: block;
 }
 
 .subtitle::before,
@@ -1722,6 +1751,21 @@ img.structure-number {
     line-height: 1.333;
     color: #191915;
     margin: 0;
+    text-align: center;
+}
+
+/* Subtítulo à esquerda, sem linhas decorativas (ex.: diagrama Bioética Principialista) */
+.subtitle--sem-linhas {
+    text-align: left;
+}
+
+.subtitle--sem-linhas::before,
+.subtitle--sem-linhas::after {
+    display: none;
+}
+
+.subtitle--sem-linhas h3 {
+    text-align: left;
 }
 
 .reference-link {
@@ -2182,6 +2226,12 @@ img.num-icon {
     border-radius: 8px;
     box-shadow: 0px 4px 0px 0px rgba(55, 55, 49, 1);
     object-fit: cover;
+}
+
+.figure-container--sem-moldura .figure-image {
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
 }
 
 .figure-caption {

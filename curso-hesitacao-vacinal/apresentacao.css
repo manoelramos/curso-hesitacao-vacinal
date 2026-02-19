@@ -347,8 +347,8 @@
     font-size: 16px;
     line-height: 1.2;
     letter-spacing: 0.05em;
-    color: #FFFFFF;
-    background-color: #FBB934;
+    color: #191915;
+    background-color: #F0F0DA;
     cursor: pointer;
     transition: all 0.2s ease;
     display: inline-flex;
@@ -947,6 +947,7 @@ body.apresentacao-page article.module-card.module-4 .card-header h3.apresentacao
     gap: 10px;
     padding: 16px;
     width: 206px;
+    white-space: nowrap;
     background-color: #FFFFFF;
     border: 2px solid #191915;
     border-radius: 16px;
