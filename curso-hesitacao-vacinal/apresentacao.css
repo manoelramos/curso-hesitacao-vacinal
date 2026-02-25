@@ -40,6 +40,24 @@
     width: auto;
 }
 
+.header-logo-text {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: #191915;
+    letter-spacing: 0.05em;
+}
+
+.header-curso-label {
+    font-weight: 300;
+}
+
+.header-curso-title {
+    font-weight: 700;
+}
+
 .header-nav {
     display: flex;
     gap: 40px;
@@ -573,7 +591,7 @@
 }
 
 .footer-logo-img-apresentacao {
-    max-width: 150px;
+    max-width: 165px;
     height: auto;
     object-fit: contain;
 }
@@ -588,7 +606,7 @@
 }
 
 .footer-logo-realizacao-apresentacao {
-    height: 60px;
+    height: 66px;
     width: auto;
     object-fit: contain;
 }
@@ -820,11 +838,11 @@
     }
 
     .footer-logo-realizacao-apresentacao {
-        height: 50px;
+        height: 55px;
     }
 
     .footer-logo-img-apresentacao {
-        max-width: 130px;
+        max-width: 143px;
     }
 
     .footer-bottom-apresentacao {
@@ -1120,9 +1138,8 @@ body.encerramento-page .hero-banner {
 
 .apresentacao-page .apresentacao-hero {
     background-color: #F0F0DA;
-    padding: 48px 24px 64px;
+    padding: 40px 24px;
     border-bottom: 2px solid #C4C4B0;
-    text-align: center;
 }
 
 .apresentacao-page .apresentacao-hero-inner {
@@ -1130,31 +1147,49 @@ body.encerramento-page .hero-banner {
     margin: 0 auto;
 }
 
-.apresentacao-page .apresentacao-hero-subtitle {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    font-size: 14px;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-    color: #191915;
-    margin: 0 0 12px 0;
+.apresentacao-hero-card-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
 }
 
-.apresentacao-page .apresentacao-hero-title {
+.apresentacao-hero-logo-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.apresentacao-hero-logo-img {
+    width: 320px;
+    height: auto;
+    display: block;
+}
+
+.apresentacao-hero-tagline {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 800;
-    font-size: 32px;
-    line-height: 1.3em;
-    color: #2A1F0F;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #191915;
     margin: 0;
 }
 
 @media (max-width: 768px) {
     .apresentacao-page .apresentacao-hero {
-        padding: 36px 20px 48px;
+        padding: 24px 20px;
     }
-    .apresentacao-page .apresentacao-hero-title {
-        font-size: 28px;
+    .apresentacao-hero-card-layout {
+        flex-direction: column;
+        gap: 24px;
+        text-align: center;
+    }
+    .apresentacao-hero-logo-img {
+        width: 120px;
+    }
+    .apresentacao-hero-tagline {
+        font-size: 16px;
     }
 }
 
@@ -1221,4 +1256,69 @@ body.encerramento-page .objetivo-curso-box {
     font-size: 20px;
     line-height: 1.6em;
     color: #191915;
+}
+
+/* ============================================
+   CRÉDITOS
+   ============================================ */
+
+.creditos-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.credito-grupo {
+    padding: 40px 0;
+    border-bottom: 1px solid #E4D8B5;
+}
+
+.credito-grupo:last-child {
+    border-bottom: none;
+}
+
+.credito-instituicao {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 1.3;
+    color: #191915;
+    margin: 0 0 24px 0;
+}
+
+.credito-pessoa {
+    margin-bottom: 20px;
+}
+
+.credito-pessoa:last-child {
+    margin-bottom: 0;
+}
+
+.credito-nome {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.4;
+    color: #191915;
+    margin: 0 0 2px 0;
+}
+
+.credito-cargo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 20px;
+    line-height: 1.4;
+    color: #191915;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .credito-instituicao {
+        font-size: 22px;
+    }
+    .credito-nome,
+    .credito-cargo {
+        font-size: 17px;
+    }
 }

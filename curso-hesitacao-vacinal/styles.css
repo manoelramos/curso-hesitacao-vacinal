@@ -225,6 +225,15 @@ h2.module-title {
     margin-bottom: 0;
 }
 
+.sidebar-encerramento-link.active .nav-text {
+    font-weight: 700;
+    color: #FBB934;
+}
+
+.sidebar-encerramento-link.active .nav-icon {
+    color: #FBB934;
+}
+
 .sidebar-module-header {
     width: 100%;
     border: none;
@@ -702,6 +711,8 @@ img.structure-number {
     height: 14px;
     min-width: 14px;
     display: block;
+    flex-shrink: 0;
+    margin-top: 7px;
     border: none;
     border-radius: 0;
     background: transparent;
@@ -713,7 +724,6 @@ img.structure-number {
     font-size: 18px;
     line-height: 1.6;
     color: #191915;
-    padding-top: 4px;
 }
 
 /* Learning Objectives */
@@ -760,7 +770,7 @@ img.structure-number {
     height: 16px;
     min-width: 16px;
     flex-shrink: 0;
-    margin-top: 4px;
+    margin-top: 8px;
 }
 
 .objective-text {
@@ -1932,7 +1942,7 @@ img.structure-number {
     margin: 0 0 21px 0;
 }
 .list-items { display: flex; flex-direction: column; gap: 21px; }
-.list-item { display: flex; align-items: center; gap: 12px; }
+.list-item { display: flex; align-items: flex-start; gap: 12px; }
 .num-icon {
     display: inline-flex;
     align-items: center;
@@ -1940,7 +1950,7 @@ img.structure-number {
     width: 14px;
     height: 14px;
     flex-shrink: 0;
-    margin-top: 4px;
+    margin-top: 8px;
     /* Estilos para quando for texto */
     border-radius: 50%;
     background: #FFFFFF;
@@ -2963,7 +2973,7 @@ img.num-icon {
 /* Enumerated List - Topicos variant */
 .enumerated-list.topicos .list-item {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 12px;
 }
 
@@ -3251,7 +3261,7 @@ body.module-3 .info-box.video-box .info-box-header {
     height: 16px;
     color: #000000;
     flex-shrink: 0;
-    margin-top: 4px;
+    margin-top: 8px;
 }
 
 .objective-item span {
@@ -3268,7 +3278,7 @@ body.module-3 .info-box.video-box .info-box-header {
 
 .link-item {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 8px;
     margin-top: 12px;
 }
@@ -3278,6 +3288,7 @@ body.module-3 .info-box.video-box .info-box-header {
     height: 16px;
     color: #191915;
     flex-shrink: 0;
+    margin-top: 2px;
 }
 
 .link-item a {
@@ -3414,7 +3425,7 @@ body.module-2 .info-box.video-box .info-box-header {
 
 .numbered-item {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 12px;
 }
 
@@ -3424,6 +3435,7 @@ body.module-2 .info-box.video-box .info-box-header {
     font-size: 20px;
     color: #191915;
     flex-shrink: 0;
+    margin-top: 2px;
 }
 
 .numbered-item span:last-child {

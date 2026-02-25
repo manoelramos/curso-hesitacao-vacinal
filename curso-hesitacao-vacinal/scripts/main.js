@@ -137,6 +137,18 @@
             lines.push('</div>');
         });
 
+        // Item de Encerramento
+        const isEncerramento = window.location.pathname.endsWith('encerramento.html');
+        const encerramentoActiveClass = isEncerramento ? ' active' : '';
+        lines.push('<div class="nav-divider"></div>');
+        lines.push(`<a class="nav-link sidebar-encerramento-link${encerramentoActiveClass}" href="encerramento.html">`);
+        lines.push('  <svg class="nav-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">');
+        lines.push('    <path d="M8 2L14 5V8C14 11.31 11.42 14.41 8 15C4.58 14.41 2 11.31 2 8V5L8 2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>');
+        lines.push('    <path d="M5.5 8L7 9.5L10.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>');
+        lines.push('  </svg>');
+        lines.push('  <span class="nav-text">Encerramento</span>');
+        lines.push('</a>');
+
         lines.push('</div>');
         root.innerHTML = lines.join('\n');
 
@@ -175,9 +187,38 @@
             containerEl.appendChild(nav);
         }
 
-        const prev = currentStepId > 1 ? currentStepId - 1 : null;
-        let next = currentStepId < (lesson.steps || []).length ? currentStepId + 1 : null;
         const { moduleId, lessonId } = parseHash();
+
+        // Calcula o href do botão "Anterior"
+        let prevHref = null;
+        if (currentStepId > 1) {
+            prevHref = `#/modulo/${moduleId}/aula/${lessonId}/step/${currentStepId - 1}`;
+        } else {
+            // Primeiro step da aula: voltar para o último step da aula anterior
+            const currentLessonIndex = (module.lessons || []).findIndex(l => l.id === lessonId);
+            if (currentLessonIndex > 0) {
+                const prevLesson = module.lessons[currentLessonIndex - 1];
+                const lastStepId = (prevLesson.steps || []).length > 0
+                    ? prevLesson.steps[prevLesson.steps.length - 1].id
+                    : 1;
+                prevHref = `#/modulo/${moduleId}/aula/${prevLesson.id}/step/${lastStepId}`;
+            } else {
+                // Primeira aula do módulo: voltar para o último step da última aula do módulo anterior
+                const currentModuleIndex = (structure.modules || []).findIndex(m => m.id === moduleId);
+                if (currentModuleIndex > 0) {
+                    const prevModule = structure.modules[currentModuleIndex - 1];
+                    if (prevModule.lessons && prevModule.lessons.length > 0) {
+                        const prevModuleLastLesson = prevModule.lessons[prevModule.lessons.length - 1];
+                        const lastStepId = (prevModuleLastLesson.steps || []).length > 0
+                            ? prevModuleLastLesson.steps[prevModuleLastLesson.steps.length - 1].id
+                            : 1;
+                        prevHref = `#/modulo/${prevModule.id}/aula/${prevModuleLastLesson.id}/step/${lastStepId}`;
+                    }
+                }
+            }
+        }
+
+        let next = currentStepId < (lesson.steps || []).length ? currentStepId + 1 : null;
 
         let nextHref = null;
         let nextButtonText = 'Próximo';
@@ -209,7 +250,7 @@
             nextHref = `#/modulo/${moduleId}/aula/${lessonId}/step/${next}`;
         }
 
-        const prevAttrs = prev ? `data-href="#/modulo/${moduleId}/aula/${lessonId}/step/${prev}"` : 'disabled';
+        const prevAttrs = prevHref ? `data-href="${prevHref}"` : 'disabled';
         const nextAttrs = nextHref ? `data-href="${nextHref}"` : 'disabled';
 
         const html = [
