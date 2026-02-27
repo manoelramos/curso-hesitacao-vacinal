@@ -214,6 +214,9 @@
                             : 1;
                         prevHref = `#/modulo/${prevModule.id}/aula/${prevModuleLastLesson.id}/step/${lastStepId}`;
                     }
+                } else {
+                    // Primeiro tópico absoluto do curso: voltar para a tela de introdução.
+                    prevHref = 'introducao.html';
                 }
             }
         }
