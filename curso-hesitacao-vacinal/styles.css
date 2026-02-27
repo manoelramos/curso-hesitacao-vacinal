@@ -3013,6 +3013,7 @@ img.num-icon {
     flex-direction: column;
     gap: -20px;
     margin: 0;
+    position: relative;
 }
 
 .card-duplo-image img {
@@ -3031,6 +3032,17 @@ img.num-icon {
     letter-spacing: 1.5%;
     color: #191915;
     padding: 0 12px 12px;
+}
+
+.card-duplo-overlay {
+    position: absolute;
+    left: 12px;
+    bottom: 4px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 1.1;
+    color: #191915;
 }
 
 .card-duplo-text {

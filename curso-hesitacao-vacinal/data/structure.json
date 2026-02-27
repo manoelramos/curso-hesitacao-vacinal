@@ -91,12 +91,10 @@
                     "title": "Cobertura Vacinal no Brasil",
                     "description": "Cobertura Vacinal no Brasil",
                     "steps": [
-                        { "id": 1, "title": "Cobertura Vacinal no Brasil" },
-                        { "id": 2, "title": "Coberturas Vacinais no Brasil" },
+                        { "id": 1, "title": "Coberturas Vacinais no Brasil" },
+                        { "id": 2, "title": "Introdução" },
                         { "id": 3, "title": "Homogeneidade da Cobertura Vacinal" },
-                        { "id": 4, "title": "Exercícios" },
-                        { "id": 5, "title": "Estratégias de enfrentamento" },
-                        { "id": 6, "title": "Exercícios" }
+                        { "id": 4, "title": "Exercícios" }
                     ]
                 }
             ]

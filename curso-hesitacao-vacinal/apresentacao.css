@@ -28,6 +28,8 @@
     justify-content: space-between;
     align-items: center;
     border-bottom: 2px solid #191915;
+    flex-wrap: wrap;
+    gap: 12px;
 }
 
 .header-logo {
@@ -624,6 +626,79 @@
 @media (max-width: 968px) {
     .modules-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .header-apresentacao {
+        padding: 14px 20px;
+        gap: 16px;
+    }
+
+    .header-logo-text {
+        font-size: 12px;
+    }
+
+    .header-nav {
+        gap: 20px;
+    }
+
+    .nav-link-header {
+        font-size: 12px;
+        gap: 6px;
+        white-space: nowrap;
+    }
+
+    .nav-link-header svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    body.encerramento-page .header-apresentacao {
+        padding: 12px 20px;
+    }
+
+    .campus-logo {
+        height: 48px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-apresentacao {
+        padding: 12px 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .header-logo,
+    .header-logo-text {
+        width: 100%;
+    }
+
+    .header-logo-text {
+        font-size: 11px;
+    }
+
+    .header-nav {
+        gap: 16px;
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .nav-link-header {
+        font-size: 11px;
+        gap: 4px;
+        white-space: nowrap;
+    }
+
+    .nav-link-header svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    .campus-logo {
+        height: 40px;
     }
 }
 
@@ -1256,6 +1331,112 @@ body.encerramento-page .objetivo-curso-box {
     font-size: 20px;
     line-height: 1.6em;
     color: #191915;
+}
+
+/* ============================================
+   AVALIAÇÃO E CERTIFICAÇÃO (Encerramento)
+   ============================================ */
+
+.avaliacao-certificado-section {
+    margin-top: 32px;
+}
+
+.avaliacao-certificado-section > p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.6em;
+    color: #191915;
+    margin: 0 0 20px 0;
+}
+
+.avaliacao-certificado-section > p:last-of-type {
+    margin-bottom: 24px;
+}
+
+.avaliacao-requisitos {
+    margin-bottom: 32px !important;
+}
+
+.avaliacao-cta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 24px;
+}
+
+.avaliacao-cta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.avaliacao-cta-label {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #191915;
+    margin: 0 !important;
+}
+
+.btn-avaliacao {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 24px;
+    border: 3px solid #191915;
+    border-radius: 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+    color: #191915;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 4px 4px 0px #191915;
+}
+
+.btn-avaliacao:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px #191915;
+}
+
+.btn-avaliacao:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px #191915;
+}
+
+.btn-avaliacao-beige {
+    background-color: #F0F0DA;
+}
+
+.btn-avaliacao-beige:hover {
+    background-color: #E8E8D0;
+}
+
+.btn-avaliacao-yellow {
+    background-color: #FBB934;
+    color: #FFFFFF;
+}
+
+.btn-avaliacao-yellow:hover {
+    background-color: #FFC84A;
+}
+
+@media (max-width: 640px) {
+    .avaliacao-cta-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .btn-avaliacao {
+        width: 100%;
+    }
 }
 
 /* ============================================
