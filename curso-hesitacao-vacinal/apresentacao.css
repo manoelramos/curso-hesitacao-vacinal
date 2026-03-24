@@ -96,6 +96,169 @@
     font-weight: 600;
 }
 
+/* Créditos no desktop: só texto, sem ícone (ícone fica no menu hambúrguer no mobile) */
+.nav-link-creditos {
+    gap: 0;
+}
+
+/* Barra mobile: ícone home + hambúrguer (visível só em telas pequenas) */
+.header-mobile-toolbar {
+    display: none;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.nav-link-home-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    color: #191915;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+.nav-link-home-icon:hover {
+    opacity: 0.75;
+    background-color: rgba(25, 25, 21, 0.06);
+}
+
+.nav-link-home-icon svg {
+    width: 22px;
+    height: 22px;
+    display: block;
+}
+
+.header-menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    margin: 0;
+    border: none;
+    background: transparent;
+    color: #191915;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+.header-menu-toggle:hover {
+    background-color: rgba(25, 25, 21, 0.06);
+}
+
+.header-menu-toggle svg {
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+
+/* Drawer do menu mobile */
+.header-mobile-drawer[hidden] {
+    display: none !important;
+}
+
+.header-mobile-drawer {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: flex;
+    justify-content: flex-end;
+    pointer-events: none;
+}
+
+.header-mobile-drawer:not([hidden]) {
+    pointer-events: auto;
+}
+
+.header-mobile-drawer-backdrop {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: rgba(25, 25, 21, 0.45);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.header-mobile-drawer-panel {
+    position: relative;
+    z-index: 1;
+    width: min(320px, 88vw);
+    max-height: 100vh;
+    overflow-y: auto;
+    background: #F0F0DA;
+    border-left: 2px solid #191915;
+    box-shadow: -8px 0 24px rgba(0, 0, 0, 0.12);
+    display: flex;
+    flex-direction: column;
+    padding: 24px 20px 32px;
+    gap: 4px;
+}
+
+.header-mobile-drawer-link {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #191915;
+    text-decoration: none;
+    padding: 14px 12px;
+    border-radius: 10px;
+    transition: background-color 0.2s ease;
+}
+
+.header-mobile-drawer-link:hover {
+    background-color: rgba(25, 25, 21, 0.08);
+}
+
+.header-mobile-drawer-link--active {
+    font-weight: 700;
+    background-color: rgba(25, 25, 21, 0.06);
+}
+
+/* Header fica acima do overlay para o hambúrguer poder fechar o menu */
+body.header-drawer-open .header-apresentacao {
+    position: relative;
+    z-index: 10001;
+}
+
+.header-mobile-drawer-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: -8px -8px 12px 0;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(25, 25, 21, 0.15);
+}
+
+.header-mobile-drawer-close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #191915;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.2s ease;
+}
+
+.header-mobile-drawer-close:hover {
+    background-color: rgba(25, 25, 21, 0.08);
+}
+
+.header-mobile-drawer-close svg {
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+
 /* ============================================
    HERO BANNER
    ============================================ */
@@ -631,70 +794,52 @@
 
 @media (max-width: 768px) {
     .header-apresentacao {
-        padding: 14px 20px;
-        gap: 16px;
+        padding: 12px 16px;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
     }
 
     .header-logo-text {
         font-size: 12px;
+        flex: 1;
+        min-width: 0;
     }
 
-    .header-nav {
-        gap: 20px;
+    .header-logo {
+        flex: 1;
+        min-width: 0;
     }
 
-    .nav-link-header {
-        font-size: 12px;
-        gap: 6px;
-        white-space: nowrap;
+    /* Desktop: links em linha; mobile: esconde e usa home + hambúrguer */
+    .header-nav-desktop {
+        display: none !important;
     }
 
-    .nav-link-header svg {
-        width: 16px;
-        height: 16px;
+    .header-mobile-toolbar {
+        display: flex;
     }
 
     body.encerramento-page .header-apresentacao {
-        padding: 12px 20px;
+        padding: 12px 16px;
     }
 
     .campus-logo {
         height: 48px;
+        max-width: min(100%, 200px);
+        object-fit: contain;
     }
 }
 
 @media (max-width: 480px) {
     .header-apresentacao {
-        padding: 12px 16px;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
-    }
-
-    .header-logo,
-    .header-logo-text {
-        width: 100%;
+        padding: 10px 12px;
     }
 
     .header-logo-text {
         font-size: 11px;
-    }
-
-    .header-nav {
-        gap: 16px;
-        width: 100%;
-        justify-content: flex-start;
-    }
-
-    .nav-link-header {
-        font-size: 11px;
-        gap: 4px;
-        white-space: nowrap;
-    }
-
-    .nav-link-header svg {
-        width: 14px;
-        height: 14px;
     }
 
     .campus-logo {

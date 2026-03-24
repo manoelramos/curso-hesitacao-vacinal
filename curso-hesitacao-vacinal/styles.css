@@ -57,12 +57,86 @@ body {
     width: 100%;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+/* Toolbar mobile (aulas): home + hambúrguer — visível só quando sidebar some em telas menores */
+.header-mobile-toolbar {
+    display: none;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.nav-link-home-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    color: #211502;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+.nav-link-home-icon:hover {
+    opacity: 0.85;
+    background-color: rgba(33, 21, 2, 0.08);
+}
+
+.nav-link-home-icon svg {
+    width: 22px;
+    height: 22px;
+    display: block;
+}
+
+.header-menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    margin: 0;
+    border: none;
+    background: transparent;
+    color: #211502;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+.header-menu-toggle:hover {
+    background-color: rgba(33, 21, 2, 0.08);
+}
+
+.header-menu-toggle svg {
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+
+/* Fundo escuro do menu mobile (aulas) */
+.sidebar-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(25, 25, 21, 0.45);
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+.sidebar-backdrop[hidden] {
+    display: none;
 }
 
 .module-info {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    min-width: 0;
+    flex: 1;
 }
 
 .module-number,
@@ -932,6 +1006,29 @@ img.structure-number {
 
     .sidebar {
         display: none;
+    }
+
+    /* Menu lateral acessível pelo hambúrguer */
+    .header-mobile-toolbar {
+        display: flex;
+    }
+
+    body.sidebar-open .sidebar {
+        display: flex !important;
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 10000;
+        height: 100vh;
+        max-height: 100vh;
+        max-width: min(320px, 92vw);
+        width: 260px;
+        box-shadow: 8px 0 24px rgba(0, 0, 0, 0.18);
+        overflow-y: auto;
+    }
+
+    body.sidebar-open .sidebar-backdrop {
+        display: block !important;
     }
 
     .header {

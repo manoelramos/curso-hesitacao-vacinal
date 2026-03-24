@@ -19,6 +19,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="sidebar-backdrop" id="sidebar-backdrop" hidden aria-hidden="true"></div>
+
     <!-- Header -->
     <header class="header">
         <div class="header-banner"></div>
@@ -27,10 +29,22 @@
                 <h1 class="module-number">MÓDULO 1</h1>
                 <h2 class="module-title">Vacina e Vacinação</h2>
             </div>
+            <div class="header-mobile-toolbar">
+                <a href="apresentacao.html" class="nav-link-home-icon" aria-label="Página inicial">
+                    <svg width="22" height="22" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M2 6L8 2L14 6V14H10V10H6V14H2V6Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+                <button type="button" class="header-menu-toggle sidebar-menu-toggle" aria-expanded="false" aria-controls="course-sidebar" aria-label="Abrir menu do curso">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M3 6H21M3 12H21M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </div>
         </div>
     </header>
 
-    <aside class="sidebar">
+    <aside class="sidebar" id="course-sidebar">
         <div class="logo">
             <div class="logo-content">
                 <img src="assets/logo-curso-hesitacao-vacinal.svg" alt="Curso Hesitação Vacinal" class="logo-image">

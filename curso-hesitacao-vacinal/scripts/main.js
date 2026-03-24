@@ -438,7 +438,53 @@
 
     window.addEventListener('hashchange', render);
 
+    function initMobileSidebar() {
+        const toggle = document.querySelector('.sidebar-menu-toggle');
+        const backdrop = document.getElementById('sidebar-backdrop');
+        const sidebar = document.querySelector('.sidebar');
+        if (!toggle || !backdrop || !sidebar) return;
+
+        function closeSidebar() {
+            document.body.classList.remove('sidebar-open');
+            backdrop.setAttribute('hidden', '');
+            backdrop.setAttribute('aria-hidden', 'true');
+            toggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        }
+
+        function openSidebar() {
+            document.body.classList.add('sidebar-open');
+            backdrop.removeAttribute('hidden');
+            backdrop.setAttribute('aria-hidden', 'false');
+            toggle.setAttribute('aria-expanded', 'true');
+            document.body.style.overflow = 'hidden';
+        }
+
+        toggle.addEventListener('click', function () {
+            if (document.body.classList.contains('sidebar-open')) {
+                closeSidebar();
+            } else {
+                openSidebar();
+            }
+        });
+
+        backdrop.addEventListener('click', closeSidebar);
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && document.body.classList.contains('sidebar-open')) {
+                closeSidebar();
+            }
+        });
+
+        sidebar.addEventListener('click', function (e) {
+            if (e.target.closest('a')) {
+                closeSidebar();
+            }
+        });
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
+        initMobileSidebar();
         console.log('DOMContentLoaded - Hash inicial:', location.hash);
         if (!location.hash || location.hash === '' || location.hash === '#') {
             console.log('Sem hash, redirecionando para step 1');
