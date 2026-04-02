@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curso Hesitação Vacinal - Módulo 1</title>
     <script>
-        // Configura o caminho base dinamicamente
         (function() {
             const pathname = window.location.pathname;
             const basePath = pathname.substring(0, pathname.lastIndexOf('/') + 1);
@@ -21,7 +20,6 @@
 <body>
     <div class="sidebar-backdrop" id="sidebar-backdrop" hidden aria-hidden="true"></div>
 
-    <!-- Header -->
     <header class="header">
         <div class="header-banner"></div>
         <div class="header-content">
@@ -30,7 +28,7 @@
                 <h2 class="module-title">Vacina e Vacinação</h2>
             </div>
             <div class="header-mobile-toolbar">
-                <a href="apresentacao.html" class="nav-link-home-icon" aria-label="Página inicial">
+                <a href="index.html" class="nav-link-home-icon" aria-label="Página inicial">
                     <svg width="22" height="22" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <path d="M2 6L8 2L14 6V14H10V10H6V14H2V6Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
@@ -54,7 +52,7 @@
         <nav class="nav-menu">
             <div class="nav-item">
                 <div class="nav-divider"></div>
-                <a class="nav-link" href="apresentacao.html">
+                <a class="nav-link" href="index.html">
                     <svg class="nav-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
                         <path d="M2 6L8 2L14 6V14H10V10H6V14H2V6Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
@@ -64,9 +62,7 @@
             </div>
         </nav>
 
-        <div class="course-steps" id="stepper-root">
-            <!-- O stepper será renderizado dinamicamente aqui -->
-        </div>
+        <div class="course-steps" id="stepper-root"></div>
 
         <div class="additional-menu">
             <a class="nav-link" href="creditos.html">
@@ -84,9 +80,7 @@
         </div>
     </aside>
 
-    <main class="main-content" id="content">
-        <!-- O conteúdo será carregado dinamicamente aqui -->
-    </main>
+    <main class="main-content" id="content"></main>
 
     <footer class="footer">
         <div class="footer-content">
